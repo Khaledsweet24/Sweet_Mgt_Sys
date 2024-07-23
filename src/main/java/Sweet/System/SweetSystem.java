@@ -16,6 +16,7 @@ public class SweetSystem {
         return loggedIn;
     }
 
+
     public void setLoggedIn(boolean loggedIn) {
         this.loggedIn = loggedIn;
     }

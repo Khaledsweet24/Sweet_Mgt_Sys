@@ -21,6 +21,7 @@ public class Feature1 {
         assertFalse(myApp.isLoggedIn());
     }
 
+
     @When("user enters username {string} and password {string}")
     public void userEntersUsernameAndPassword(String username, String password) {
         User user = new User(username,password);

@@ -19,3 +19,4 @@ Feature: User login to Sweet System
     When user enters username "admin" and password "123"
     Then user is not logged in to the system
     And a wrong credential message will appear
+
