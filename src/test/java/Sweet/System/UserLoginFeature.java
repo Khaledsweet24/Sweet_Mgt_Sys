@@ -48,8 +48,8 @@ public class UserLoginFeature {
 
     @Then("a welcome message will appear")
     public void aWelcomeMessageWillAppear() {
-    String ExpectedMessage = "Welcome Admin!";
-        assertTrue(ExpectedMessage.equals(user.getMessage()));
+    String expectedMessage = "Welcome Admin!";
+        assertEquals("Welcome message not displayed correctly", expectedMessage, user.getMessage());
     }
 
     @Then("user is not logged in to the system")
@@ -59,15 +59,15 @@ public class UserLoginFeature {
 
     @Then("a wrong password message will appear")
     public void aWrongPasswordMessageWillAppear() {
-        String ExpectedMessage = "Wrong Password!";
-        assertTrue(ExpectedMessage.equals(user.getMessage()));
+        String expectedMessage = "Wrong Password!";
+        assertEquals("Wrong password message not displayed correctly", expectedMessage, user.getMessage());
     }
 
 
     @Then("a wrong credential message will appear")
     public void aWrongCredentialMessageWillAppear() {
-        String ExpectedMessage = "Invalid Credentials!";
-        assertTrue(ExpectedMessage.equals(user.getMessage()));
+        String expectedMessage = "Invalid Credentials!";
+        assertEquals("Invalid credentials message not displayed correctly", expectedMessage, user.getMessage());
     }
 
 }
