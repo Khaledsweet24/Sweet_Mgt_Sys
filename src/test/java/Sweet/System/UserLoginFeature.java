@@ -4,15 +4,14 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
-public class Feature1 {
+public class UserLoginFeature {
 
     SweetSystem myApp;
-
+    User user;
         //dependency Injection
-    public Feature1(SweetSystem myApp) {
+    public UserLoginFeature(SweetSystem myApp) {
         this.myApp = myApp;
     }
 
@@ -24,11 +23,20 @@ public class Feature1 {
 
     @When("user enters username {string} and password {string}")
     public void userEntersUsernameAndPassword(String username, String password) {
-        User user = new User(username,password);
+        user = new User(username,password);
         for(User u : myApp.Users) {
             if(u.getUsername().equals(username) && u.getPassword().equals(password)) {
                 myApp.setLoggedIn(true);
+                user.setMessage("Welcome " + username + "!");
                 break;
+            }
+            else if(u.getUsername().equals(username)){
+                user.setMessage("Wrong Password!");
+                myApp.setLoggedIn(false);
+            }
+            else {
+                user.setMessage("Invalid Credentials!");
+                myApp.setLoggedIn(false);
             }
         }
     }
@@ -40,7 +48,8 @@ public class Feature1 {
 
     @Then("a welcome message will appear")
     public void aWelcomeMessageWillAppear() {
-
+    String ExpectedMessage = "Welcome Admin!";
+        assertTrue(ExpectedMessage.equals(user.getMessage()));
     }
 
     @Then("user is not logged in to the system")
@@ -50,13 +59,15 @@ public class Feature1 {
 
     @Then("a wrong password message will appear")
     public void aWrongPasswordMessageWillAppear() {
-
+        String ExpectedMessage = "Wrong Password!";
+        assertTrue(ExpectedMessage.equals(user.getMessage()));
     }
 
 
     @Then("a wrong credential message will appear")
     public void aWrongCredentialMessageWillAppear() {
-
+        String ExpectedMessage = "Invalid Credentials!";
+        assertTrue(ExpectedMessage.equals(user.getMessage()));
     }
 
 }
