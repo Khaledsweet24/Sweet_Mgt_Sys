@@ -1,4 +1,4 @@
-Feature: User login to Sweet System
+Feature: User Login to Sweet System
   Actor: regular user
 
   Scenario: Valid Credentials
