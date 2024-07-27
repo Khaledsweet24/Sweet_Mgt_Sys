@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 public class UserLoginFeature {
 
     SweetSystem myApp;
-    User user;
+    User user = new User("User1","123");
         //dependency Injection
     public UserLoginFeature(SweetSystem myApp) {
         this.myApp = myApp;
@@ -17,7 +17,7 @@ public class UserLoginFeature {
 
     @Given("user is not in the Sweet system")
     public void userIsNotInTheSweetSystem() {
-        assertFalse(myApp.isUserLoggedIn());
+        assertFalse(user.isUserLoggedIn());
     }
 
 
@@ -26,24 +26,24 @@ public class UserLoginFeature {
         user = new User(username,password);
         for(User u : myApp.Users) {
             if(u.getUsername().equals(username) && u.getPassword().equals(password)) {
-                myApp.setUserLoggedIn(true);
+                user.setUserLoggedIn(true);
                 myApp.setMessage("Welcome " + username + "!");
                 break;
             }
             else if(u.getUsername().equals(username)){
                 myApp.setMessage("Wrong Password!");
-                myApp.setUserLoggedIn(false);
+                user.setUserLoggedIn(false);
             }
             else {
                 myApp.setMessage("Invalid Credentials!");
-                myApp.setUserLoggedIn(false);
+                user.setUserLoggedIn(false);
             }
         }
     }
 
     @Then("user is now in the system")
     public void userIsNowInTheSystem() {
-         assertTrue(myApp.isUserLoggedIn());
+         assertTrue(user.isUserLoggedIn());
     }
 
     @Then("a welcome message will appear")
@@ -54,7 +54,7 @@ public class UserLoginFeature {
 
     @Then("user is not logged in to the system")
     public void userIsNotLoggedInToTheSystem() {
-        assertFalse(myApp.isUserLoggedIn());
+        assertFalse(user.isUserLoggedIn());
     }
 
     @Then("a wrong password message will appear")

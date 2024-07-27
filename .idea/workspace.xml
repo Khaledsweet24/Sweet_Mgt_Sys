@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14161de2-a19d-4840-a966-d2d78935bd9a" name="Changes" comment="Adding the Signup Feature to the Sweet System (test + production codes)">
+    <list default="true" id="14161de2-a19d-4840-a966-d2d78935bd9a" name="Changes" comment="Adding the UserManagement Feature with some modifications to the flag logic in the code.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cases/UserLogin.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Cases/UserLogin.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/RawSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/RawSupplier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/StoreOwner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/StoreOwner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/SweetSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/SweetSystem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Sweet/System/UserLoginFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sweet/System/UserLoginFeature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Sweet/System/UserSignupFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sweet/System/UserSignupFeature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Sweet/System/UserManagmentFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sweet/System/UserManagmentFeature.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +153,8 @@
       <workItem from="1721763379589" duration="776000" />
       <workItem from="1721764167130" duration="7457000" />
       <workItem from="1721827985516" duration="8745000" />
-      <workItem from="1722084557540" duration="8102000" />
+      <workItem from="1722084557540" duration="10396000" />
+      <workItem from="1722108789698" duration="2110000" />
     </task>
     <task id="LOCAL-00001" summary="Creating the Maven project">
       <option name="closed" value="true" />
@@ -257,7 +260,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721838887798</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Adding the UserManagement Feature with some modifications to the flag logic in the code.">
+      <option name="closed" value="true" />
+      <created>1722093452839</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1722093452839</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,6 +292,7 @@
     <MESSAGE value="Adding Feature1 (User Login) with test and production codes." />
     <MESSAGE value="Modifying an assertion statement in the testing code" />
     <MESSAGE value="Adding the Signup Feature to the Sweet System (test + production codes)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding the Signup Feature to the Sweet System (test + production codes)" />
+    <MESSAGE value="Adding the UserManagement Feature with some modifications to the flag logic in the code." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding the UserManagement Feature with some modifications to the flag logic in the code." />
   </component>
 </project>

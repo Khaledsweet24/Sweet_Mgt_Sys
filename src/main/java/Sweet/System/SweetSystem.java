@@ -4,10 +4,6 @@ import java.util.ArrayList;
 
 public class SweetSystem {
     private boolean registeredIn;
-    private boolean userLoggedIn;
-    private boolean adminLoggedIn;
-    private boolean storeOwnerExist;
-    private boolean supplierExist;
     private boolean UserValid;
     private String message;
 
@@ -23,24 +19,10 @@ public class SweetSystem {
         Users.add(Zahi);
         Admin Hadi = new Admin ("Admin","Admin");
         Admins.add(Hadi);
+        registeredIn = false;
+        UserValid = false;
     }
 
-    public boolean isUserLoggedIn() {
-        return userLoggedIn;
-    }
-
-
-    public void setUserLoggedIn(boolean loggedIn) {
-        this.userLoggedIn = loggedIn;
-    }
-
-    public boolean isAdminLoggedIn() {
-        return adminLoggedIn;
-    }
-
-    public void setAdminLoggedIn(boolean adminLoggedIn) {
-        this.adminLoggedIn = adminLoggedIn;
-    }
 
     public boolean isRegisteredIn() {
         return registeredIn;
@@ -73,6 +55,8 @@ public class SweetSystem {
         if (isUserValid()) {
             Users.add(user);
             setMessage("User registered successfully!");
+        } else {
+            setMessage("Invalid user details!");
         }
     }
 
@@ -88,27 +72,32 @@ public class SweetSystem {
                         return true;
                     }
                 }
+                break;
             case ADMIN:
                 for (Admin admin : Admins) {
                     if (admin.getUsername().equals(username)) {
                         return true;
                     }
                 }
+                break;
             case STORE_OWNER:
                 for (StoreOwner storeOwner : storeOwners) {
                     if (storeOwner.getUsername().equals(username)) {
                         return true;
                     }
                 }
+                break;
             case SUPPLIER:
                 for (RawSupplier sp : Suppliers) {
                     if (sp.getUsername().equals(username)) {
                         return true;
                     }
                 }
+                break;
             default:
                 return false;
         }
+        return false;
     }
 
     public String getMessage() {
@@ -119,19 +108,4 @@ public class SweetSystem {
         this.message = message;
     }
 
-    public boolean isStoreOwnerExist() {
-        return storeOwnerExist;
-    }
-
-    public void setStoreOwnerExist(boolean storeOwnerExist) {
-        this.storeOwnerExist = storeOwnerExist;
-    }
-
-    public boolean isSupplierExist() {
-        return supplierExist;
-    }
-
-    public void setSupplierExist(boolean supplierExist) {
-        this.supplierExist = supplierExist;
-    }
 }

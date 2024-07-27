@@ -3,10 +3,12 @@ package Sweet.System;
 public class Admin {
     private String username;
     private String password;
+    private boolean adminLoggedIn;
 
     public Admin(String username, String password) {
         this.username = username;
         this.password = password;
+        adminLoggedIn = false;
     }
 
     public String getUsername() {
@@ -25,4 +27,11 @@ public class Admin {
         this.password = password;
     }
 
+    public boolean isAdminLoggedIn() {
+        return adminLoggedIn;
+    }
+
+    public void setAdminLoggedIn(boolean adminLoggedIn) {
+        this.adminLoggedIn = adminLoggedIn;
+    }
 }

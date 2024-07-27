@@ -12,9 +12,9 @@ import static org.junit.Assert.*;
 
 public class UserManagmentFeature {
     SweetSystem myApp;
-    Admin admin;
-    StoreOwner storeOwner1;
-    RawSupplier supplier1;
+    Admin admin = new Admin("Admin","Admin");
+    StoreOwner storeOwner1 = new StoreOwner("StoreOwner1","SO1","storeOwner1@example.com");
+    RawSupplier supplier1 =new RawSupplier("Supplier1","RMS1","supplier1@example.com");;
 
     public UserManagmentFeature(SweetSystem myApp) {
         this.myApp = myApp;
@@ -26,13 +26,13 @@ public class UserManagmentFeature {
         {
             if(a.getUsername().equals(un) && a.getPassword().equals(passcode))
             {
-                myApp.setAdminLoggedIn(true);
-                assertTrue(myApp.isAdminLoggedIn());
+                admin.setAdminLoggedIn(true);
+                assertTrue(admin.isAdminLoggedIn());
             }
             else
             {
-            myApp.setAdminLoggedIn(false);
-            assertFalse(myApp.isAdminLoggedIn());
+            admin.setAdminLoggedIn(false);
+            assertFalse(admin.isAdminLoggedIn());
             }
 
         }
@@ -63,13 +63,13 @@ public class UserManagmentFeature {
         {
             if(st.getUsername().equals(username))
             {
-                myApp.setStoreOwnerExist(true);
-                assertTrue(myApp.isStoreOwnerExist());
+                storeOwner1.setStoreOwnerExist(true);
+                assertTrue(storeOwner1.isStoreOwnerExist());
                 break;
             }
             else {
-                myApp.setStoreOwnerExist(false);
-                assertFalse(myApp.isStoreOwnerExist());
+                storeOwner1.setStoreOwnerExist(false);
+                assertFalse(storeOwner1.isStoreOwnerExist());
                 break;
             }
         }
@@ -83,7 +83,7 @@ public class UserManagmentFeature {
             StoreOwner storeOwner = iterator.next();
             if (storeOwner.getUsername().equals(username)) {
                 iterator.remove();
-                myApp.setStoreOwnerExist(false);
+                storeOwner1.setStoreOwnerExist(false);
                 break;
             }
         }
@@ -92,7 +92,7 @@ public class UserManagmentFeature {
 
     @Then("the store owner should be removed from the Sweet System")
     public void theStoreOwnerShouldBeRemovedFromTheSweetSystem() {
-        assertFalse(myApp.isStoreOwnerExist());
+        assertFalse(storeOwner1.isStoreOwnerExist());
     }
 
     @When("I add a supplier with a username {string} and a password {string} and an email {string}")
@@ -108,18 +108,39 @@ public class UserManagmentFeature {
     }
 
     @Given("a supplier with username {string} exists in the Sweet System")
-    public void aSupplierWithUsernameExistsInTheSweetSystem(String string) {
-
+    public void aSupplierWithUsernameExistsInTheSweetSystem(String username) {
+        for(RawSupplier sp : myApp.Suppliers)
+        {
+            if(sp.getUsername().equals(username))
+            {
+                supplier1.setSupplierExist(true);
+                assertTrue(supplier1.isSupplierExist());
+                break;
+            }
+            else {
+                supplier1.setSupplierExist(false);
+                assertFalse(supplier1.isSupplierExist());
+                break;
+            }
+        }
     }
 
     @When("I remove a supplier with a username {string}")
-    public void iRemoveASupplierWithAUsername(String string) {
-
+    public void iRemoveASupplierWithAUsername(String username) {
+        Iterator<RawSupplier> iterator = myApp.Suppliers.iterator();
+        while (iterator.hasNext()) {
+            RawSupplier sp = iterator.next();
+            if (sp.getUsername().equals(username)) {
+                iterator.remove();
+                supplier1.setSupplierExist(false);
+                break;
+            }
+        }
     }
 
     @Then("the supplier should be removed from the Sweet System")
     public void theSupplierShouldBeRemovedFromTheSweetSystem() {
-
+        assertFalse(supplier1.isSupplierExist());
     }
 
     @Given("I am an admin logged into the Sweet System")

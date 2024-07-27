@@ -4,11 +4,13 @@ public class RawSupplier {
     private String username;
     private String password;
     private String email;
+    private boolean supplierExist;
 
     public RawSupplier(String username, String password, String email) {
         this.username = username;
         this.password = password;
         this.email = email;
+        supplierExist = false;
     }
 
     public String getUsername() {
@@ -33,5 +35,13 @@ public class RawSupplier {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public boolean isSupplierExist() {
+        return supplierExist;
+    }
+
+    public void setSupplierExist(boolean supplierExist) {
+        this.supplierExist = supplierExist;
     }
 }
