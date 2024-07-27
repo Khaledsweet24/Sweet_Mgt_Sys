@@ -1,12 +1,10 @@
 package Sweet.System;
 
-import java.util.ArrayList;
-
-public class User {
-    private String  username;
+public class Admin {
+    private String username;
     private String password;
 
-    public User(String username, String password) {
+    public Admin(String username, String password) {
         this.username = username;
         this.password = password;
     }
@@ -19,7 +17,6 @@ public class User {
         this.username = username;
     }
 
-
     public String getPassword() {
         return password;
     }
@@ -28,11 +25,4 @@ public class User {
         this.password = password;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                '}';
-    }
 }

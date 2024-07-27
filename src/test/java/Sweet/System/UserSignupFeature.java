@@ -25,7 +25,7 @@ public class UserSignupFeature {
             myApp.setUserValid(true);
         } else {
             myApp.setUserValid(false);
-            user.setMessage("Invalid Credentials!");
+            myApp.setMessage("Invalid Credentials!");
         }
     }
 
@@ -40,14 +40,13 @@ public class UserSignupFeature {
     @Then("a successful signup message will appear")
     public void aSuccessfulSignupMessageWillAppear() {
         String expectedMessage = "User registered successfully!";
-        assertEquals(expectedMessage,user.getMessage());
+        assertEquals(expectedMessage,myApp.getMessage());
     }
-
 
 
     @Then("wrong credential message will appear")
     public void wrongCredentialMessageWillAppear() {
         String expectedMessage = "Invalid Credentials!";
-        assertEquals("Invalid credentials message not displayed correctly", expectedMessage, user.getMessage());
+        assertEquals("Invalid credentials message not displayed correctly", expectedMessage, myApp.getMessage());
     }
 }
