@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14161de2-a19d-4840-a966-d2d78935bd9a" name="Changes" comment="Finishing up the UserManagement Feature and fixing some logic related to flags and completing the Suppliers test &amp; prod. codes.">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="14161de2-a19d-4840-a966-d2d78935bd9a" name="Changes" comment="Completing the MonitoringAndReporting Feature, Still under construction.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cases/UserSignup.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Cases/UserSignup.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/StoreOwner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/StoreOwner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/SweetSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/SweetSystem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Sweet/System/MonitoringAndReportingFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sweet/System/MonitoringAndReportingFeature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Sweet/System/UserLoginFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sweet/System/UserLoginFeature.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Sweet/System/UserSignupFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sweet/System/UserSignupFeature.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -157,6 +155,7 @@
       <workItem from="1722084557540" duration="10396000" />
       <workItem from="1722108789698" duration="2844000" />
       <workItem from="1722153509582" duration="866000" />
+      <workItem from="1722169491204" duration="3638000" />
     </task>
     <task id="LOCAL-00001" summary="Creating the Maven project">
       <option name="closed" value="true" />
@@ -278,7 +277,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722110982875</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Completing the MonitoringAndReporting Feature, Still under construction.">
+      <option name="closed" value="true" />
+      <created>1722166494357</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1722166494357</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,6 +311,7 @@
     <MESSAGE value="Adding the Signup Feature to the Sweet System (test + production codes)" />
     <MESSAGE value="Adding the UserManagement Feature with some modifications to the flag logic in the code." />
     <MESSAGE value="Finishing up the UserManagement Feature and fixing some logic related to flags and completing the Suppliers test &amp; prod. codes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finishing up the UserManagement Feature and fixing some logic related to flags and completing the Suppliers test &amp; prod. codes." />
+    <MESSAGE value="Completing the MonitoringAndReporting Feature, Still under construction." />
+    <option name="LAST_COMMIT_MESSAGE" value="Completing the MonitoringAndReporting Feature, Still under construction." />
   </component>
 </project>

@@ -2,8 +2,9 @@ package Sweet.System;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
+import java.util.HashMap;
 import java.util.ArrayList;
+import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -12,6 +13,10 @@ public class MonitoringAndReportingFeature {
 
     SweetSystem myApp;
     StoreOwner storeOwner1 = new StoreOwner("StoreOwner1","SO1","storeOwner1@example.com");
+    private HashMap<String, Integer> test;
+
+
+
     public MonitoringAndReportingFeature(SweetSystem myApp) {
         this.myApp = myApp;
     }
@@ -63,11 +68,14 @@ public class MonitoringAndReportingFeature {
 
         @When("I request statistics on registered users by city")
         public void iRequestStatisticsOnRegisteredUsersByCity() {
-
+            test = myApp.getUserStatisticsByCity();
+//            System.out.println(test);
         }
         @Then("I should see the number of registered users in each city")
         public void iShouldSeeTheNumberOfRegisteredUsersInEachCity() {
-
+            String actualMessage= test.toString();
+            String expectedMessage = "{Qalqiliah=0, Tulkarem=0, Nablus=1, Tubas=0, Jerusalem=0, Jericho=0, Hebron=0, Bethlehem=0, Jenin=0, Ramallah=0}";
+            assertEquals(expectedMessage,actualMessage);
         }
 
 

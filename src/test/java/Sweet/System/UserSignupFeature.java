@@ -18,9 +18,9 @@ public class UserSignupFeature {
         assertFalse(myApp.isRegisteredIn());
     }
 
-    @When("user enters a username {string} and a password {string}")
-    public void userEntersAUsernameAndAPassword(String username, String password) {
-        user = new User(username, password);
+    @When("user enters a username {string} and a password {string} and an email {string} and his city {string}")
+    public void userEntersAUsernameAndAPasswordAndAnEmailAndHisCity(String username, String password,String email, String city) {
+        user = new User(username, password, email, city);
         if (myApp.isValidUsername(username) && myApp.isValidPassword(password)) {
             myApp.setUserValid(true);
             assertTrue(myApp.isUserValid());
@@ -29,13 +29,6 @@ public class UserSignupFeature {
             myApp.setMessage("Invalid Credentials!");
             assertFalse(myApp.isUserValid());
         }
-    }
-    @When("user enters his email {string} and his city {string}")
-    public void userEntersHisEmailAndHisCity(String email, String city) {
-        user.setEmail(email);
-        user.setCity(city);
-        myApp.setUserValid(true);
-        assertTrue(myApp.isUserValid());
     }
 
     @Then("user is registered into the Sweet System")

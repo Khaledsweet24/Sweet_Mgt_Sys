@@ -1,7 +1,9 @@
 package Sweet.System;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class SweetSystem {
     private boolean registeredIn;
@@ -16,7 +18,7 @@ public class SweetSystem {
 
     public SweetSystem() {
         // here we will fill the ArrayList from a file with the valid users.
-        User Zahi = new User ("User1","123"); // this is just for testing, and it should be reading from a file. for the inputs that are repeated, added/modified
+        User Zahi = new User ("User1","123","user1@example.com","Nablus"); // this is just for testing, and it should be reading from a file. for the inputs that are repeated, added/modified
         Users.add(Zahi);
         Admin Hadi = new Admin ("Admin","Admin");
         Admins.add(Hadi);
@@ -124,6 +126,22 @@ public class SweetSystem {
         return allUsers;
     }
 
+    public HashMap<String,Integer> getUserStatisticsByCity() {
+        HashMap<String,Integer> cityStatistics = new HashMap<>();
+        String[] cities = {"Nablus", "Jenin", "Ramallah", "Jerusalem", "Jericho", "Tulkarem", "Hebron", "Qalqiliah", "Bethlehem", "Tubas"};
+        for (String city : cities) {
+            cityStatistics.put(city, 0);
+        }
+        for (User user : Users) {
+            String userCity = user.getCity();
+            if (cityStatistics.containsKey(userCity)) {
+                cityStatistics.put(userCity, cityStatistics.get(userCity) + 1);
+            } else {
+                cityStatistics.put(userCity, 1);
+            }
+        }
+        return cityStatistics;
+    }
 
 
 }

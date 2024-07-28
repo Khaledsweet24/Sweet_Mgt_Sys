@@ -12,6 +12,13 @@ public class User {
     public User(String username, String password) {
         this.username = username;
         this.password = password;
+    }
+
+    public User(String username, String password, String email, String city) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.city = city;
         userLoggedIn = false;
     }
  // we need another constructor to set the email and the city among with the username and the password.

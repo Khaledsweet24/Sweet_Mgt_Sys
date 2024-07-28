@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 public class UserLoginFeature {
 
     SweetSystem myApp;
-    User user = new User("User1","123");
+    User user = new User("User1","123","user1@example.com","Nablus");
         //dependency Injection
     public UserLoginFeature(SweetSystem myApp) {
         this.myApp = myApp;
