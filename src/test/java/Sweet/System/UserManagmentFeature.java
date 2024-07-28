@@ -5,13 +5,15 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import java.util.Iterator;
+import java.util.List;
 
 import static Sweet.System.userType.STORE_OWNER;
 import static Sweet.System.userType.SUPPLIER;
 import static org.junit.Assert.*;
 
 public class UserManagmentFeature {
-    SweetSystem myApp;
+    private SweetSystem myApp;
+    private List<Object> userList;
     Admin admin = new Admin("Admin","Admin");
     StoreOwner storeOwner1 = new StoreOwner("StoreOwner1","SO1","storeOwner1@example.com");
     RawSupplier supplier1 =new RawSupplier("Supplier1","RMS1","supplier1@example.com");;
@@ -143,19 +145,32 @@ public class UserManagmentFeature {
         assertFalse(supplier1.isSupplierExist());
     }
 
-    @Given("I am an admin logged into the Sweet System")
-    public void iAmAnAdminLoggedIntoTheSweetSystem() {
-
-    }
 
     @When("I view the user list")
     public void iViewTheUserList() {
-
+        userList = myApp.getAllUsers();
     }
 
     @Then("I should see the list of all store owners and raw material suppliers and normal users")
     public void iShouldSeeTheListOfAllStoreOwnersAndRawMaterialSuppliersAndNormalUsers() {
+        boolean hasUsers = false;
+        boolean hasStoreOwners = false;
+        boolean hasSuppliers = false;
 
+        for (Object user : userList) {
+            if (user instanceof User) {
+                hasUsers = true;
+            } else if (user instanceof StoreOwner) {
+                hasStoreOwners = true;
+            } else if (user instanceof RawSupplier) {
+                hasSuppliers = true;
+            }
+        }
+
+        assertTrue("User list should contain Users", hasUsers);
+        assertTrue("User list should contain Store Owners", hasStoreOwners);
+        assertTrue("User list should contain Raw Material Suppliers", hasSuppliers);
     }
+
 
 }

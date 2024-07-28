@@ -31,6 +31,6 @@ Feature: its an Admin feature to control adding a new Store owner or a new raw m
     And a confirmation message will appear
 
   Scenario: View all users
-    Given I am an admin logged into the Sweet System
+    Given I am an admin logged in to the Sweet System using username "Admin" and password "Admin"
     When I view the user list
     Then I should see the list of all store owners and raw material suppliers and normal users

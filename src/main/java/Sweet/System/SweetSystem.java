@@ -1,6 +1,7 @@
 package Sweet.System;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SweetSystem {
     private boolean registeredIn;
@@ -19,6 +20,10 @@ public class SweetSystem {
         Users.add(Zahi);
         Admin Hadi = new Admin ("Admin","Admin");
         Admins.add(Hadi);
+        StoreOwner Khaled = new StoreOwner("StoreOwner1","SO1","storeOwner1@example.com");
+        storeOwners.add(Khaled);
+        RawSupplier Ahmad = new RawSupplier("Supplier1","RMS1","supplier1@example.com");
+        Suppliers.add(Ahmad);
         registeredIn = false;
         UserValid = false;
     }
@@ -106,6 +111,14 @@ public class SweetSystem {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public List<Object> getAllUsers() {
+        List<Object> allUsers = new ArrayList<>();
+        allUsers.addAll(Users);
+        allUsers.addAll(storeOwners);
+        allUsers.addAll(Suppliers);
+        return allUsers;
     }
 
 }
