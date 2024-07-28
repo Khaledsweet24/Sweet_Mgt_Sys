@@ -3,7 +3,6 @@ Feature: User Login to Sweet System
 
   Scenario: Valid Credentials
     Given user is not in the Sweet system
-
     When user enters username "User1" and password "123"
     Then user is now in the system
     And a welcome message will appear

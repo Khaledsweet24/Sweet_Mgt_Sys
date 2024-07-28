@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14161de2-a19d-4840-a966-d2d78935bd9a" name="Changes" comment="Completing the MonitoringAndReporting Feature, Still under construction.">
+    <list default="true" id="14161de2-a19d-4840-a966-d2d78935bd9a" name="Changes" comment="Adding the Signup Feature to the Sweet System (test + production codes)">
+      <change afterPath="$PROJECT_DIR$/Cases/ ContentManagement.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Sweet/System/ContentManagementFeature.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cases/UserSignup.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Cases/UserSignup.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/SweetSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/SweetSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Sweet/System/MonitoringAndReportingFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sweet/System/MonitoringAndReportingFeature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Sweet/System/UserLoginFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sweet/System/UserLoginFeature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Sweet/System/UserSignupFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sweet/System/UserSignupFeature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cases/UserLogin.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Cases/UserLogin.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Sweet/System/AcceptanceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sweet/System/AcceptanceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +41,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="jar://$PROJECT_DIR$/../../Program Files/Java/jdk-22/lib/src.zip!/java.base/java/util/function/Supplier.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar://$USER_HOME$/Program Files/Java/jdk-22/lib/src.zip!/java.base/java/util/function/Supplier.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -54,23 +52,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.App.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: Feature1.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AcceptanceTest.executor&quot;: &quot;Run&quot;,
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Repository/Sweet Management System/src/main/java/Sweet/System&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.App.executor": "Run",
+    "Cucumber Java.Feature: Feature1.executor": "Run",
+    "JUnit.AcceptanceTest.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/Repository/Sweet Management System/src/main/java/Sweet/System",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Sweet.System" />
@@ -127,7 +126,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.AcceptanceTest" />
-        <item itemvalue="Cucumber Java.Feature: Feature1" />
       </list>
     </recent_temporary>
   </component>
@@ -152,10 +150,7 @@
       <workItem from="1721763379589" duration="776000" />
       <workItem from="1721764167130" duration="7457000" />
       <workItem from="1721827985516" duration="8745000" />
-      <workItem from="1722084557540" duration="10396000" />
-      <workItem from="1722108789698" duration="2844000" />
-      <workItem from="1722153509582" duration="866000" />
-      <workItem from="1722169491204" duration="3638000" />
+      <workItem from="1722084557540" duration="8102000" />
     </task>
     <task id="LOCAL-00001" summary="Creating the Maven project">
       <option name="closed" value="true" />
@@ -261,31 +256,7 @@
       <option name="project" value="LOCAL" />
       <updated>1721838887798</updated>
     </task>
-    <task id="LOCAL-00014" summary="Adding the UserManagement Feature with some modifications to the flag logic in the code.">
-      <option name="closed" value="true" />
-      <created>1722093452839</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1722093452839</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Finishing up the UserManagement Feature and fixing some logic related to flags and completing the Suppliers test &amp; prod. codes.">
-      <option name="closed" value="true" />
-      <created>1722110982875</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1722110982875</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Completing the MonitoringAndReporting Feature, Still under construction.">
-      <option name="closed" value="true" />
-      <created>1722166494357</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1722166494357</updated>
-    </task>
-    <option name="localTasksCounter" value="17" />
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,9 +280,6 @@
     <MESSAGE value="Adding Feature1 (User Login) with test and production codes." />
     <MESSAGE value="Modifying an assertion statement in the testing code" />
     <MESSAGE value="Adding the Signup Feature to the Sweet System (test + production codes)" />
-    <MESSAGE value="Adding the UserManagement Feature with some modifications to the flag logic in the code." />
-    <MESSAGE value="Finishing up the UserManagement Feature and fixing some logic related to flags and completing the Suppliers test &amp; prod. codes." />
-    <MESSAGE value="Completing the MonitoringAndReporting Feature, Still under construction." />
-    <option name="LAST_COMMIT_MESSAGE" value="Completing the MonitoringAndReporting Feature, Still under construction." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding the Signup Feature to the Sweet System (test + production codes)" />
   </component>
 </project>
