@@ -1,9 +1,13 @@
 package Sweet.System;
 
+import java.util.ArrayList;
+
 public class StoreOwner {
     private String username;
     private String password;
     private String email;
+
+
     private boolean storeOwnerExist;
 
     public StoreOwner(String username, String password, String email) {
