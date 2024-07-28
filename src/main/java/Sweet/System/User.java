@@ -6,12 +6,15 @@ public class User {
     private String  username;
     private String password;
     private boolean userLoggedIn;
+    private String city;
+    private String email;
 
     public User(String username, String password) {
         this.username = username;
         this.password = password;
         userLoggedIn = false;
     }
+ // we need another constructor to set the email and the city among with the username and the password.
 
     public String getUsername() {
         return username;
@@ -36,6 +39,22 @@ public class User {
 
     public void setUserLoggedIn(boolean userLoggedIn) {
         this.userLoggedIn = userLoggedIn;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     @Override

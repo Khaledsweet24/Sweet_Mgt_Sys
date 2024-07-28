@@ -3,7 +3,8 @@ Feature: User Signup to Sweet System
 
   Scenario: Valid credentials
     Given user is not registered in the Sweet System
-    When user enters a username "Admin" and a password "123"
+    When user enters a username "User1" and a password "123"
+    And user enters his email "user1@example.com" and his city "Nablus"
     Then user is registered into the Sweet System
     And a successful signup message will appear
 

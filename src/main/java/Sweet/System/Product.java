@@ -4,7 +4,7 @@ public class Product {
     private String name;
     private double price;
     private double rawMaterialCost;
-
+    private int sellingTimes;
     public Product(String name, double price, double rawMaterialCost) {
         this.name = name;
         this.price = price;
@@ -25,6 +25,18 @@ public class Product {
 
     public double getProfit() {
         return price - rawMaterialCost;
+    }
+
+    public int getSellingTimes() {
+        return sellingTimes;
+    }
+
+    public void setSellingTimes(int sellingTimes) {
+        this.sellingTimes = sellingTimes;
+    }
+
+    public void incrementSellingTimes() {
+        sellingTimes++;
     }
 
     @Override

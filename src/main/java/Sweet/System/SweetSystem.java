@@ -26,6 +26,9 @@ public class SweetSystem {
         Suppliers.add(Ahmad);
         registeredIn = false;
         UserValid = false;
+        Product product1 = new Product("Chocolate",10,5);
+        product1.setSellingTimes(5);
+        Khaled.products.add(product1);
     }
 
 
@@ -120,5 +123,7 @@ public class SweetSystem {
         allUsers.addAll(Suppliers);
         return allUsers;
     }
+
+
 
 }
