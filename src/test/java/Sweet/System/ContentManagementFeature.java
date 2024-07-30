@@ -7,7 +7,9 @@ public class ContentManagementFeature {
 
     SweetSystem myApp;
 
-    public ContentManagementFeature(SweetSystem myApp) {this.myApp = myApp;}
+    public ContentManagementFeature(SweetSystem myApp) {
+        this.myApp = myApp;
+    }
 
     @When("I request to see the content")
     public void iRequestToSeeTheContent() {

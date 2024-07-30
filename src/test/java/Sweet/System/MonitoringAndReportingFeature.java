@@ -25,7 +25,6 @@ public class MonitoringAndReportingFeature {
         public void iGenerateAFinancialReport() {
             double profits;
             for (StoreOwner st : myApp.storeOwners) {
-                profits =0.0;
                 profits = st.calculateTotalProfit();
                 st.setTotalProfit(profits);
                 assertEquals(profits,5.0,0.001);
@@ -58,7 +57,7 @@ public class MonitoringAndReportingFeature {
         }
         @Then("the quantity sold for each product should be displayed")
         public void theQuantitySoldForEachProductShouldBeDisplayed() {
-            ArrayList<String> actualMessage= new ArrayList<>();
+            ArrayList<String> actualMessage;
             String expectedMessage="Chocolate product has been sold for 5 times";
             for (StoreOwner st : myApp.storeOwners) {
                 actualMessage = st.getQuantitySoldTimes();
@@ -69,7 +68,6 @@ public class MonitoringAndReportingFeature {
         @When("I request statistics on registered users by city")
         public void iRequestStatisticsOnRegisteredUsersByCity() {
             test = myApp.getUserStatisticsByCity();
-//            System.out.println(test);
         }
         @Then("I should see the number of registered users in each city")
         public void iShouldSeeTheNumberOfRegisteredUsersInEachCity() {
