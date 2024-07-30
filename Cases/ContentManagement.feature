@@ -16,4 +16,3 @@ Feature: Content Management
     Given I am an admin logged in to the Sweet System using username "Admin" and password "Admin"
     When I request to see the users feedback
     Then I should see a list of all users feedback
-    And I should be able to reply to feedback

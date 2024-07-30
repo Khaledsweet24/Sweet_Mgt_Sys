@@ -8,6 +8,7 @@ public class User {
     private boolean userLoggedIn;
     private String city;
     private String email;
+    private Feedback userFeedback;
 
     public User(String username, String password) {
         this.username = username;
@@ -62,6 +63,14 @@ public class User {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public Feedback getUserFeedback() {
+        return userFeedback;
+    }
+
+    public void setUserFeedback(Feedback userFeedback) {
+        this.userFeedback = userFeedback;
     }
 
     @Override

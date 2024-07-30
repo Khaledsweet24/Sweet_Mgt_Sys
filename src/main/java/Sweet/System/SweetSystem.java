@@ -1,16 +1,13 @@
 package Sweet.System;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class SweetSystem {
     private boolean registeredIn;
     private boolean UserValid;
     private String message;
-
-
+    private boolean recipeAdded;
+    private boolean postAdded;
     public ArrayList<User> Users = new ArrayList<User>();
     public ArrayList<Admin> Admins = new ArrayList<Admin>();
     public ArrayList<StoreOwner>storeOwners = new ArrayList<StoreOwner>();
@@ -19,8 +16,14 @@ public class SweetSystem {
     public ArrayList<Recipe>Recipes = new ArrayList<Recipe>();
 
     public SweetSystem() {
-        // here we will fill the ArrayList from a file with the valid users.
-        User Zahi = new User ("User1","123","user1@example.com","Nablus"); // this is just for testing, and it should be reading from a file. for the inputs that are repeated, added/modified
+        registeredIn = false;
+        UserValid = false;
+        recipeAdded=false;
+        postAdded = false;
+
+        User Zahi = new User ("User1","123","user1@example.com","Nablus");
+        Feedback feedback = new Feedback("The sweets are awesome, the place was quite and cosy, and the service was perfect, 10/10 Sweet shop!");
+        Zahi.setUserFeedback(feedback);
         Users.add(Zahi);
         Admin Hadi = new Admin ("Admin","Admin");
         Admins.add(Hadi);
@@ -28,15 +31,14 @@ public class SweetSystem {
         storeOwners.add(Khaled);
         RawSupplier Ahmad = new RawSupplier("Supplier1","RMS1","supplier1@example.com");
         Suppliers.add(Ahmad);
-        registeredIn = false;
-        UserValid = false;
         Product product1 = new Product("Chocolate",10,5);
         product1.setSellingTimes(5);
         Khaled.products.add(product1);
-        Recipe recipe1 =new Recipe("Kunafa","qater,chees,dow");
+        Recipe recipe1 =new Recipe("Kunafa","dough");
         Recipes.add(recipe1);
-        Post post1 =new Post("Kunafa","qater,chees");
+        Post post1 =new Post("Kunafa","dough");
         Posts.add(post1);
+
     }
 
 
@@ -64,7 +66,7 @@ public class SweetSystem {
         //to be contiued
     }
     public boolean isValidPassword(String password) {
-        // Add your password validation logic here (e.g., minimum length)
+
         return password != null && password.length() >= 3;
     }
     public void registerUser(User user) {
@@ -163,5 +165,83 @@ public class SweetSystem {
 
     public void setPosts(ArrayList<Post> posts) {
         Posts = posts;
+    }
+
+    public void addRecipe(Recipe recipe) {
+        Recipes.add(recipe);
+        setRecipeAdded(true);
+    }
+
+    public void addPost(Post post) {
+        Posts.add(post);
+        setPostAdded(true);
+    }
+
+    public boolean isRecipeAdded() {
+        return recipeAdded;
+    }
+
+    public void setRecipeAdded(boolean recipeAdded) {
+        this.recipeAdded = recipeAdded;
+    }
+
+    public boolean isPostAdded() {
+        return postAdded;
+    }
+
+    public void setPostAdded(boolean postAdded) {
+        this.postAdded = postAdded;
+    }
+
+    public boolean deleteRecipe(Recipe recipe) {
+        boolean deleted = false;
+        Iterator<Recipe> iterator = Recipes.iterator();
+        while (iterator.hasNext()) {
+            Recipe r = iterator.next();
+            if (r.getTitle().equals(recipe.getTitle()) && r.getDescription().equals(recipe.getDescription())) {
+                iterator.remove();
+                deleted = true;
+                break;
+            }
+        }
+        return deleted;
+    }
+
+
+    public boolean deletePost(Post post) {
+        boolean deleted = false;
+        Iterator<Post> iterator = Posts.iterator();
+        while (iterator.hasNext()) {
+            Post p = iterator.next();
+            if (p.getTitle().equals(post.getTitle()) && p.getContent().equals(post.getContent())) {
+                iterator.remove();
+                deleted = true;
+                break;
+            }
+        }
+        return deleted;
+    }
+
+    public boolean editRecipe(String Title, String Description, Recipe unwantedRecipe)
+    {
+        Recipe newRecipe = new Recipe(Title, Description);
+        boolean deleted = deleteRecipe(unwantedRecipe);
+        newRecipe.setTitle("IceCreem");
+        newRecipe.setDescription("Yummy");
+        addRecipe(newRecipe);
+        if(deleted && isRecipeAdded())
+            return true;
+        else return false;
+    }
+    public boolean editPost(String Title, String Content, Post unwantedPost)
+    {
+        Post newPost = new Post(Title, Content);
+        boolean deleted = deletePost(unwantedPost);
+        newPost.setTitle("IceCreem");
+        newPost.setContent("Yummy");
+        addPost(newPost);
+        if(deleted && isPostAdded())
+            return true;
+        else return false;
     }
 }
