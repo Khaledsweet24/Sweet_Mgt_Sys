@@ -15,6 +15,8 @@ public class SweetSystem {
     public ArrayList<Admin> Admins = new ArrayList<Admin>();
     public ArrayList<StoreOwner>storeOwners = new ArrayList<StoreOwner>();
     public ArrayList<RawSupplier>Suppliers = new ArrayList<RawSupplier>();
+    public ArrayList<Post>Posts = new ArrayList<Post>();
+    public ArrayList<Recipe>Recipes = new ArrayList<Recipe>();
 
     public SweetSystem() {
         // here we will fill the ArrayList from a file with the valid users.
@@ -31,6 +33,10 @@ public class SweetSystem {
         Product product1 = new Product("Chocolate",10,5);
         product1.setSellingTimes(5);
         Khaled.products.add(product1);
+        Recipe recipe1 =new Recipe("Kunafa","qater,chees,dow");
+        Recipes.add(recipe1);
+        Post post1 =new Post("Kunafa","qater,chees");
+        Posts.add(post1);
     }
 
 
@@ -143,5 +149,19 @@ public class SweetSystem {
         return cityStatistics;
     }
 
+    public ArrayList<Recipe> getRecipes() {
+        return Recipes;
+    }
 
+    public void setRecipes(ArrayList<Recipe> recipes) {
+        Recipes = recipes;
+    }
+
+    public ArrayList<Post> getPosts() {
+        return Posts;
+    }
+
+    public void setPosts(ArrayList<Post> posts) {
+        Posts = posts;
+    }
 }

@@ -3,16 +3,28 @@ package Sweet.System;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import java.util.List;
+
 public class ContentManagementFeature {
 
     SweetSystem myApp;
 
-    public ContentManagementFeature(SweetSystem myApp) {
-        this.myApp = myApp;
-    }
+    public ContentManagementFeature(SweetSystem myApp) { this.myApp = myApp; }
 
     @When("I request to see the content")
     public void iRequestToSeeTheContent() {
+        List<Recipe> recipes = myApp.getRecipes();
+        List<Post> posts = myApp.getPosts();
+
+        System.out.println("Recipes:");
+        for (Recipe recipe : recipes) {
+            System.out.println(recipe);
+        }
+
+        System.out.println("Posts:");
+        for (Post post : posts) {
+            System.out.println(post);
+        }
 
     }
 

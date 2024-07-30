@@ -12,7 +12,7 @@ public class UserLoginFeature {
     User user = new User("User1","123","user1@example.com","Nablus");
         //dependency Injection
     public UserLoginFeature(SweetSystem myApp) {
-        this.myApp = myApp;
+                                                   this.myApp = myApp;
     }
 
     @Given("user is not in the Sweet system")
