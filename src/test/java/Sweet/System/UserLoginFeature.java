@@ -23,7 +23,7 @@ public class UserLoginFeature {
 
     @When("user enters username {string} and password {string}")
     public void userEntersUsernameAndPassword(String username, String password) {
-        user = new User(username,password);
+        user = new User(username,password); //this should be modified
         for(User u : myApp.Users) {
             if(u.getUsername().equals(username) && u.getPassword().equals(password)) {
                 user.setUserLoggedIn(true);

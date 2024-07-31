@@ -8,6 +8,7 @@ public class SweetSystem {
     private String message;
     private boolean recipeAdded;
     private boolean postAdded;
+    private boolean productAdded;
     public ArrayList<User> Users = new ArrayList<User>();
     public ArrayList<Admin> Admins = new ArrayList<Admin>();
     public ArrayList<StoreOwner>storeOwners = new ArrayList<StoreOwner>();
@@ -20,7 +21,7 @@ public class SweetSystem {
         UserValid = false;
         recipeAdded=false;
         postAdded = false;
-
+        productAdded = false;
         User Zahi = new User ("User1","123","user1@example.com","Nablus");
         Feedback feedback = new Feedback("The sweets are awesome, the place was quite and cosy, and the service was perfect, 10/10 Sweet shop!");
         Zahi.setUserFeedback(feedback);
@@ -32,6 +33,7 @@ public class SweetSystem {
         RawSupplier Ahmad = new RawSupplier("Supplier1","RMS1","supplier1@example.com");
         Suppliers.add(Ahmad);
         Product product1 = new Product("Chocolate",10,5);
+        product1.setDiscount(15.0);
         product1.setSellingTimes(5);
         Khaled.products.add(product1);
         Recipe recipe1 =new Recipe("Kunafa","dough");
@@ -128,9 +130,11 @@ public class SweetSystem {
 
     public List<Object> getAllUsers() {
         List<Object> allUsers = new ArrayList<>();
+        // this method will return every user could use the system, no matter what the role is.
         allUsers.addAll(Users);
         allUsers.addAll(storeOwners);
         allUsers.addAll(Suppliers);
+        allUsers.addAll(Admins);
         return allUsers;
     }
 
@@ -243,5 +247,29 @@ public class SweetSystem {
         if(deleted && isPostAdded())
             return true;
         else return false;
+    }
+
+    public boolean isProductAdded() {
+        return productAdded;
+    }
+
+    public void setProductAdded(boolean productAdded) {
+        this.productAdded = productAdded;
+    }
+
+    public ArrayList<User> getUsers() {
+        return Users;
+    }
+
+    public ArrayList<Admin> getAdmins() {
+        return Admins;
+    }
+
+    public ArrayList<StoreOwner> getStoreOwners() {
+        return storeOwners;
+    }
+
+    public ArrayList<RawSupplier> getSuppliers() {
+        return Suppliers;
     }
 }
