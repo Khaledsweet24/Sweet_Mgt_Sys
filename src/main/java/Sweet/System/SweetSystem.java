@@ -9,6 +9,11 @@ public class SweetSystem {
     private boolean recipeAdded;
     private boolean postAdded;
     private boolean productAdded;
+    private boolean messageSent;
+    private boolean emailNotificationsEnabled;
+    private boolean specialRequestMade;
+    private String lastEmailNotificationContent;
+    private EmailService emailService;
     public ArrayList<User> Users = new ArrayList<User>();
     public ArrayList<Admin> Admins = new ArrayList<Admin>();
     public ArrayList<StoreOwner>storeOwners = new ArrayList<StoreOwner>();
@@ -22,13 +27,14 @@ public class SweetSystem {
         recipeAdded=false;
         postAdded = false;
         productAdded = false;
+        messageSent=false;
         User Zahi = new User ("User1","123","user1@example.com","Nablus");
         Feedback feedback = new Feedback("The sweets are awesome, the place was quite and cosy, and the service was perfect, 10/10 Sweet shop!");
         Zahi.setUserFeedback(feedback);
         Users.add(Zahi);
         Admin Hadi = new Admin ("Admin","Admin");
         Admins.add(Hadi);
-        StoreOwner Khaled = new StoreOwner("StoreOwner1","SO1","storeOwner1@example.com");
+        StoreOwner Khaled = new StoreOwner("StoreOwner1","SO1","MedbLucifer@gmail.com");
         storeOwners.add(Khaled);
         RawSupplier Ahmad = new RawSupplier("Supplier1","RMS1","supplier1@example.com");
         Suppliers.add(Ahmad);
@@ -40,6 +46,7 @@ public class SweetSystem {
         Recipes.add(recipe1);
         Post post1 =new Post("Kunafa","dough");
         Posts.add(post1);
+        emailService = new EmailService();
 
     }
 
@@ -265,6 +272,14 @@ public class SweetSystem {
         return Admins;
     }
 
+    public boolean isMessageSent() {
+        return messageSent;
+    }
+
+    public void setMessageSent(boolean messageSent) {
+        this.messageSent = messageSent;
+    }
+
     public ArrayList<StoreOwner> getStoreOwners() {
         return storeOwners;
     }
@@ -272,4 +287,75 @@ public class SweetSystem {
     public ArrayList<RawSupplier> getSuppliers() {
         return Suppliers;
     }
+
+    public void sendMessageToUser(String message, String user) {
+        for (User u : Users){
+            if(u.getUsername().equals(user)){
+                u.addMessage(message);
+                setMessageSent(true);
+            }
+        }
+    }
+    public void sendMessageToSupplier(String message, String s) {
+        for (RawSupplier r : Suppliers){
+            if(r.getUsername().equals(s)){
+                r.addMessage(message);
+                setMessageSent(true);
+            }
+        }
+    }
+    public User getUserByUsername(String username) {
+        for (User u : Users) {
+            if (u.getUsername().equals(username)) {
+                return u;
+            }
+        }
+        return null; // Or throw an exception if user not found
+    }
+    public RawSupplier getSupplierByUsername(String username) {
+        for (RawSupplier r : Suppliers  ) {
+            if (r.getUsername().equals(username)) {
+                return r;
+            }
+        }
+        return null; // Or throw an exception if user not found
+    }
+    public StoreOwner getStoreOwnerByUsername(String username) {
+        for (StoreOwner owner : storeOwners) {
+            if (owner.getUsername().equals(username)) {
+                return owner;
+            }
+        }
+        return null; // Return null if no matching owner is found
+    }
+
+    public void enableEmailNotifications() {
+        emailNotificationsEnabled = true;
+    }
+
+    public boolean isEmailNotificationsEnabled() {
+        return emailNotificationsEnabled;
+    }
+    public void makeSpecialRequest(User user, StoreOwner owner) {
+        specialRequestMade = true;
+        String content = "a Special request made by " + user.getUsername();
+        // just add special request parameter to the user to give more info in the email.
+        sendEmailNotification(content, owner.getEmail());
+    }
+
+    public boolean isSpecialRequestMade() {
+        return specialRequestMade;
+    }
+
+    private void sendEmailNotification(String content, String toEmail) {
+        lastEmailNotificationContent = content;
+        if (emailNotificationsEnabled) {
+            emailService.sendEmail(toEmail, "Special Request Notification", content);
+        }
+    }
+
+    public String getLastEmailNotificationContent() {
+        return lastEmailNotificationContent;
+    }
+
 }

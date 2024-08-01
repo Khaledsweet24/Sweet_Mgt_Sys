@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14161de2-a19d-4840-a966-d2d78935bd9a" name="Changes" comment="Completing ContentManagementFeature.">
-      <change afterPath="$PROJECT_DIR$/Cases/ProductManagement.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Sweet/System/ProductManagementFeature.java" afterDir="false" />
+    <list default="true" id="14161de2-a19d-4840-a966-d2d78935bd9a" name="Changes" comment="Completing the ProductManagement Feature.">
+      <change afterPath="$PROJECT_DIR$/Cases/CommunicationAndNotification.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/EmailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Sweet/System/CommunicationAndNotificationFeature.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/RawSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/RawSupplier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/StoreOwner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/StoreOwner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/SweetSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/SweetSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Sweet/System/UserLoginFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sweet/System/UserLoginFeature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,23 +57,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.App.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: Feature1.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AcceptanceTest.executor&quot;: &quot;Run&quot;,
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Repository/Sweet Management System/src/main/java/Sweet/System&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.App.executor": "Run",
+    "Cucumber Java.Feature: Feature1.executor": "Run",
+    "JUnit.AcceptanceTest.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/Repository/Sweet Management System/src/main/java/Sweet/System",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Sweet.System" />
@@ -157,7 +160,9 @@
       <workItem from="1722153509582" duration="866000" />
       <workItem from="1722169491204" duration="3638000" />
       <workItem from="1722377969744" duration="337000" />
-      <workItem from="1722420343330" duration="7950000" />
+      <workItem from="1722420343330" duration="8589000" />
+      <workItem from="1722450174302" duration="5831000" />
+      <workItem from="1722521949140" duration="6526000" />
     </task>
     <task id="LOCAL-00001" summary="Creating the Maven project">
       <option name="closed" value="true" />
@@ -295,7 +300,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722377655304</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Completing the ProductManagement Feature.">
+      <option name="closed" value="true" />
+      <created>1722430340999</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1722430340999</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,7 +336,8 @@
     <MESSAGE value="Finishing up the UserManagement Feature and fixing some logic related to flags and completing the Suppliers test &amp; prod. codes." />
     <MESSAGE value="Completing the MonitoringAndReporting Feature, Still under construction." />
     <MESSAGE value="Completing ContentManagementFeature." />
-    <option name="LAST_COMMIT_MESSAGE" value="Completing ContentManagementFeature." />
+    <MESSAGE value="Completing the ProductManagement Feature." />
+    <option name="LAST_COMMIT_MESSAGE" value="Completing the ProductManagement Feature." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -14,6 +14,8 @@ public class StoreOwner {
     private boolean storeOwnerExist;
     private boolean AdminRequest;
     private boolean OwnerLoggedIn;
+
+
     public StoreOwner(String username, String password, String email) {
         this.username = username;
         this.password = password;
@@ -188,6 +190,8 @@ public class StoreOwner {
         }
         return applied;
     }
+
+
 
 }
 

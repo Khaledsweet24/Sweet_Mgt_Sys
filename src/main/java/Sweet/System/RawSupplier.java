@@ -1,10 +1,18 @@
 package Sweet.System;
 
+import java.util.ArrayList;
+
 public class RawSupplier {
     private String username;
     private String password;
     private String email;
     private boolean supplierExist;
+    private ArrayList<String> messagesList= new ArrayList<>();;
+
+    public RawSupplier(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 
     public RawSupplier(String username, String password, String email) {
         this.username = username;
@@ -44,4 +52,22 @@ public class RawSupplier {
     public void setSupplierExist(boolean supplierExist) {
         this.supplierExist = supplierExist;
     }
+
+    public ArrayList<String> getMessagesList() {
+        return messagesList;
+    }
+
+    public void setMessagesList(ArrayList<String> messagesList) {
+        this.messagesList = messagesList;
+    }
+
+    public void addMessage(String message) {
+        messagesList.add(message);
+    }
+
+    public String getMessage(int index) {
+        return messagesList.get(index);
+    }
+
+
 }

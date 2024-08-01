@@ -9,6 +9,7 @@ public class User {
     private String city;
     private String email;
     private Feedback userFeedback;
+    private ArrayList<String> messagesList = new ArrayList<String>();
 
     public User(String username, String password) {
         this.username = username;
@@ -71,6 +72,22 @@ public class User {
 
     public void setUserFeedback(Feedback userFeedback) {
         this.userFeedback = userFeedback;
+    }
+
+    public ArrayList<String> getMessagesList() {
+        return messagesList;
+    }
+
+    public void setMessagesList(ArrayList<String> messageList) {
+        this.messagesList = messageList;
+    }
+
+    public void addMessage(String message) {
+        messagesList.add(message);
+    }
+
+    public String getMessage(int index){
+        return messagesList.get(index);
     }
 
     @Override
