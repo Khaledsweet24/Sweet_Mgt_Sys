@@ -6,6 +6,8 @@ public class RawSupplier {
     private String username;
     private String password;
     private String email;
+    private String BusinessName;
+    private String Address;
     private boolean supplierExist;
     private ArrayList<String> messagesList= new ArrayList<>();;
 
@@ -69,5 +71,24 @@ public class RawSupplier {
         return messagesList.get(index);
     }
 
+    public String getBusinessName() {
+        return BusinessName;
+    }
 
+    public void setBusinessName(String businessName) {
+        BusinessName = businessName;
+    }
+
+    public String getAddress() {
+        return Address;
+    }
+
+    public void setAddress(String address) {
+        Address = address;
+    }
+
+    public String viewAccountDetails(){
+        return "Business name: "+ getBusinessName() + "\nUsername: " + getUsername() + "\nPassword: "+getPassword()+"\nEmail: "+getEmail()+"\nCity: "+getAddress()+"\n";
+
+    }
 }

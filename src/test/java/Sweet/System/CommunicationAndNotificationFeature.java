@@ -73,14 +73,11 @@ public class CommunicationAndNotificationFeature {
 
     @When("a special request is made by user {string} to store owner {string}")
     public void aSpecialRequestIsMadeByUserToStoreOwner(String username, String ownername) {
+        String requestContent = "I would like to have a chocolate cake with chocolate ships on top, and a vanilla cream as a covering, thank you!";
         StoreOwner owner = myApp.getStoreOwnerByUsername(ownername);
-        if (owner == null) {
-            System.out.println("Owner is null");
-        } else {
-            System.out.println("Owner email: " + owner.getEmail());
-        }
         User user = myApp.getUserByUsername(username);
-        myApp.makeSpecialRequest(user, owner);
+
+        myApp.makeSpecialRequest(user, owner,user.getRequestContent(requestContent));
         assertTrue(myApp.isSpecialRequestMade());
     }
 

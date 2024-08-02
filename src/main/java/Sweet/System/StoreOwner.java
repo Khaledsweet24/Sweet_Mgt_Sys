@@ -8,13 +8,30 @@ public class StoreOwner {
     private String username;
     private String password;
     private String email;
+    private String Address;
+    private String BusinessName;
     public ArrayList<Product>products = new ArrayList<Product>();
     public ArrayList<String>report = new ArrayList<String>();
     private double totalProfit;
     private boolean storeOwnerExist;
     private boolean AdminRequest;
     private boolean OwnerLoggedIn;
+    private boolean emailChanged;
+    private boolean passwordChanged;
+    private boolean businessNameChanged;
+    private  boolean AddressChanged;
 
+    public StoreOwner(String businessName, String address) {
+        BusinessName = businessName;
+        Address = address;
+    }
+
+    public StoreOwner(String username, String password, String email, String address) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        Address = address;
+    }
 
     public StoreOwner(String username, String password, String email) {
         this.username = username;
@@ -23,6 +40,10 @@ public class StoreOwner {
         storeOwnerExist = false;
         AdminRequest = false;
         OwnerLoggedIn = false;
+        emailChanged = false;
+        passwordChanged = false;
+        businessNameChanged = false;
+        AddressChanged = false;
     }
 
     public String getUsername() {
@@ -191,7 +212,47 @@ public class StoreOwner {
         return applied;
     }
 
+    public String viewAccountDetails(){
+        return "Business name: "+ getBusinessName() + "\nUsername: " + getUsername() + "\nPassword: "+getPassword()+"\nEmail: "+getEmail()+"\nCity: "+getAddress()+"\n";
 
+    }
 
+    public boolean updateEmail(String newEmail){
+        setEmail(newEmail);
+        emailChanged= true;
+        return emailChanged;
+    }
+
+    public boolean updatePassword(String newPassword){
+        setPassword(newPassword);
+        passwordChanged = true;
+        return passwordChanged;
+    }
+
+    public String getAddress() {
+        return Address;
+    }
+
+    public void setAddress(String address) {
+        Address = address;
+    }
+
+    public String getBusinessName() {
+        return BusinessName;
+    }
+
+    public void setBusinessName(String businessName) {
+        BusinessName = businessName;
+    }
+    public boolean updateBusinessName(String newBusinessName){
+        setBusinessName(newBusinessName);
+        businessNameChanged = true;
+        return businessNameChanged;
+    }
+    public boolean updateAddress(String newAddress){
+        setAddress(newAddress);
+        AddressChanged = true;
+        return AddressChanged;
+    }
 }
 

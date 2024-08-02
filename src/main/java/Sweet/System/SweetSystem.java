@@ -1,6 +1,8 @@
 package Sweet.System;
 
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class SweetSystem {
     private boolean registeredIn;
@@ -31,10 +33,15 @@ public class SweetSystem {
         User Zahi = new User ("User1","123","user1@example.com","Nablus");
         Feedback feedback = new Feedback("The sweets are awesome, the place was quite and cosy, and the service was perfect, 10/10 Sweet shop!");
         Zahi.setUserFeedback(feedback);
+        Order order = new Order("Chocolate Cake",2,"12345");
+        Zahi.addOrder(order);
         Users.add(Zahi);
+
         Admin Hadi = new Admin ("Admin","Admin");
         Admins.add(Hadi);
         StoreOwner Khaled = new StoreOwner("StoreOwner1","SO1","MedbLucifer@gmail.com");
+        Khaled.setAddress("Nablus city, West Bank, Palestine");
+        Khaled.setBusinessName("BearBulk Co.");
         storeOwners.add(Khaled);
         RawSupplier Ahmad = new RawSupplier("Supplier1","RMS1","supplier1@example.com");
         Suppliers.add(Ahmad);
@@ -336,9 +343,9 @@ public class SweetSystem {
     public boolean isEmailNotificationsEnabled() {
         return emailNotificationsEnabled;
     }
-    public void makeSpecialRequest(User user, StoreOwner owner) {
+    public void makeSpecialRequest(User user, StoreOwner owner, String requestContent) {
         specialRequestMade = true;
-        String content = "a Special request made by " + user.getUsername();
+        String content = "Special request made by " + user.getUsername(); //+"\n"+requestContent;
         // just add special request parameter to the user to give more info in the email.
         sendEmailNotification(content, owner.getEmail());
     }
@@ -356,6 +363,14 @@ public class SweetSystem {
 
     public String getLastEmailNotificationContent() {
         return lastEmailNotificationContent;
+    }
+
+    public boolean isEmailValid(String email) {
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@" +
+                "(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+        Pattern pattern = Pattern.compile(emailRegex);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
     }
 
 }

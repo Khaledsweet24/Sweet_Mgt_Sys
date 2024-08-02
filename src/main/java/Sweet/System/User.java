@@ -10,6 +10,7 @@ public class User {
     private String email;
     private Feedback userFeedback;
     private ArrayList<String> messagesList = new ArrayList<String>();
+    private ArrayList<Order> orderList = new ArrayList<Order>();
 
     public User(String username, String password) {
         this.username = username;
@@ -90,6 +91,50 @@ public class User {
         return messagesList.get(index);
     }
 
+    public String getRequestContent(String request) {
+        return "\n"+getUsername() + " requested a special delivery with a message of: "+request +"\n\nThe provided email if further communication is required: "+ getEmail();
+    }
+    public String viewAccountDetails(){
+        return "\nUsername: " + getUsername() + "\nPassword: "+getPassword()+"\nEmail: "+getEmail()+"\nCity: "+getCity()+"\n";
+
+    }
+
+    public ArrayList<Order> getOrderList() {
+        return orderList;
+    }
+
+    public void setOrderList(ArrayList<Order> orderList) {
+        this.orderList = orderList;
+    }
+
+    public void addOrder(Order order){
+        order.setOrderStatus("Processed");
+        order.setProcessed(true);
+        orderList.add(order);
+    }
+
+    public Order getOrder(int index){
+        return orderList.get(index);
+    }
+
+    public Order getOrderById(String id){
+        for(Order order : orderList){
+            if (order.getOrderID().equals(id)){
+                return order;
+            }
+        }
+        return null;
+    }
+
+    public void cancelOrder(String Id)
+    {
+        for(Order order : orderList){
+            if (order.getOrderID().equals(Id)){
+                order.setOrderStatus("Cancelled");
+                orderList.remove(order); //the best option is to add this order to another list called: removed orders and mark it as cancelled.
+            }
+        }
+    }
     @Override
     public String toString() {
         return "User{" +
