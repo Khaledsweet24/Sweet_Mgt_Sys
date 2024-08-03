@@ -36,7 +36,6 @@ public class SweetSystem {
         Order order = new Order("Chocolate Cake",2,"12345");
         Zahi.addOrder(order);
         Users.add(Zahi);
-
         Admin Hadi = new Admin ("Admin","Admin");
         Admins.add(Hadi);
         StoreOwner Khaled = new StoreOwner("StoreOwner1","SO1","MedbLucifer@gmail.com");

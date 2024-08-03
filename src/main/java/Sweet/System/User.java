@@ -6,11 +6,16 @@ public class User {
     private String  username;
     private String password;
     private boolean userLoggedIn;
+    private boolean AddressChanged;
+    private boolean EmailChanged;
     private String city;
     private String email;
+    private String Address;
     private Feedback userFeedback;
     private ArrayList<String> messagesList = new ArrayList<String>();
     private ArrayList<Order> orderList = new ArrayList<Order>();
+    private ArrayList<DessertCreation> dessertCreations = new ArrayList<>();
+    private ArrayList<DessertCreation> sharedDessertCreations = new ArrayList<>();
 
     public User(String username, String password) {
         this.username = username;
@@ -23,6 +28,8 @@ public class User {
         this.email = email;
         this.city = city;
         userLoggedIn = false;
+        AddressChanged = false;
+        EmailChanged = false;
     }
  // we need another constructor to set the email and the city among with the username and the password.
 
@@ -131,10 +138,45 @@ public class User {
         for(Order order : orderList){
             if (order.getOrderID().equals(Id)){
                 order.setOrderStatus("Cancelled");
-                orderList.remove(order); //the best option is to add this order to another list called: removed orders and mark it as cancelled.
             }
         }
     }
+
+    public String getAddress() {
+        return Address;
+    }
+
+    public void setAddress(String address) {
+        Address = address;
+    }
+    public boolean updateAddress(String newAddress){
+        setAddress(newAddress);
+        AddressChanged = true;
+        return AddressChanged;
+    }
+
+    public boolean updateEmail(String newEmail){
+        setEmail(newEmail);
+        EmailChanged = true;
+        return EmailChanged;
+    }
+    public void postDessertCreation(DessertCreation creation) {
+        dessertCreations.add(creation);
+    }
+
+    public DessertCreation getLatestDessertCreation() {
+        if (dessertCreations.isEmpty()) return null;
+        return dessertCreations.get(dessertCreations.size() - 1);
+    }
+
+    public void shareDessertCreation(DessertCreation creation, User targetUser) {
+        targetUser.sharedDessertCreations.add(creation);
+    }
+
+    public ArrayList<DessertCreation> getSharedDessertCreations() {
+        return sharedDessertCreations;
+    }
+
     @Override
     public String toString() {
         return "User{" +

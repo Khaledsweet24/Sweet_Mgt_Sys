@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14161de2-a19d-4840-a966-d2d78935bd9a" name="Changes" comment="Completing Communication and Notification Feature and enabling Email messaging between the user(in Application) with the Store Owner's email.">
-      <change afterPath="$PROJECT_DIR$/Cases/AccountManagement.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cases/OrderManagement.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Sweet/System/AccountManagementFeature.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Sweet/System/OrderManagementFeature.java" afterDir="false" />
+    <list default="true" id="14161de2-a19d-4840-a966-d2d78935bd9a" name="Changes" comment="Finishing the Order Management Feature.">
+      <change afterPath="$PROJECT_DIR$/Cases/UserAccount.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/DessertCreation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Sweet/System/UserAccountFeature.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/RawSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/RawSupplier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/StoreOwner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/StoreOwner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/SweetSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/SweetSystem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Sweet/System/CommunicationAndNotificationFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sweet/System/CommunicationAndNotificationFeature.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +161,7 @@
       <workItem from="1722420343330" duration="8589000" />
       <workItem from="1722450174302" duration="5831000" />
       <workItem from="1722521949140" duration="10883000" />
-      <workItem from="1722631557185" duration="9895000" />
+      <workItem from="1722631557185" duration="12216000" />
     </task>
     <task id="LOCAL-00001" summary="Creating the Maven project">
       <option name="closed" value="true" />
@@ -320,7 +315,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722529323704</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Finishing the Order Management Feature.">
+      <option name="closed" value="true" />
+      <created>1722642206311</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1722642206311</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -350,7 +353,8 @@
     <MESSAGE value="Completing ContentManagementFeature." />
     <MESSAGE value="Completing the ProductManagement Feature." />
     <MESSAGE value="Completing Communication and Notification Feature and enabling Email messaging between the user(in Application) with the Store Owner's email." />
-    <option name="LAST_COMMIT_MESSAGE" value="Completing Communication and Notification Feature and enabling Email messaging between the user(in Application) with the Store Owner's email." />
+    <MESSAGE value="Finishing the Order Management Feature." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finishing the Order Management Feature." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
