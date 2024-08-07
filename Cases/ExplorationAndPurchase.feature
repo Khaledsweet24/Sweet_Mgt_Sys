@@ -62,3 +62,4 @@ Feature: Exploration and Purchase
     Given I have completed a purchase
     When the purchase is confirmed
     Then I should receive an order confirmation email
+
