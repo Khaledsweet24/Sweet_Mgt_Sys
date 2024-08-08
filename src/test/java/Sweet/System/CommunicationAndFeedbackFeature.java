@@ -5,6 +5,11 @@ import io.cucumber.java.en.When;
 
 public class CommunicationAndFeedbackFeature {
 
+    SweetSystem myApp;
+    public CommunicationAndFeedbackFeature(SweetSystem myApp) {
+        this.myApp = myApp;
+    }
+
     @When("I have an inquiry or need assistance")
     public void iHaveAnInquiryOrNeedAssistance() {
 

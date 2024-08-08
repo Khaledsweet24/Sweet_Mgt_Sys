@@ -48,8 +48,12 @@ public class SweetSystem {
         product1.setDiscount(15.0);
         product1.setSellingTimes(5);
         Khaled.products.add(product1);
+
         Recipe recipe1 =new Recipe("Kunafa","dough");
         Recipes.add(recipe1);
+        Recipe recipe2 =new Recipe("Chocolate Cake","a cake flavored with melted chocolate, cocoa powder");
+        Recipes.add(recipe2);
+
         Post post1 =new Post("Kunafa","dough");
         Posts.add(post1);
         emailService = new EmailService();

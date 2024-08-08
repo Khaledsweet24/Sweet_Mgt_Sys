@@ -37,16 +37,28 @@ public class ContentManagementFeature {
     public void iShouldSeeAListOfAllRecipesAndPosts() {
         ArrayList<Recipe> recipes = myApp.getRecipes();
         ArrayList<Post> posts = myApp.getPosts();
-        String expectedFromRecipes = "Kunafa" + ": "+"dough\n";
-        String actualFromRecipes= "";
+        String expectedFromRecipes1 = "Kunafa" + ": "+"dough\n";
+        String expectedFromRecipes2 ="Chocolate Cake" + ": " + "a cake flavored with melted chocolate, cocoa powder" + "\n";
+        String actualFromRecipes1= "";
+        String actualFromRecipes2= "";
         String expectedFromPosts = "Kunafa" + ": "+"dough\n";;
         String actualFromPosts="";
 
 
         for (Recipe recipe : recipes) {
-            actualFromRecipes = recipe.toString();
-            assertEquals("Recipes went not as expected", expectedFromRecipes, actualFromRecipes);
+
+            if (recipe.getTitle().equals("Kunafa")) {
+                actualFromRecipes1 = recipe.toString();
+                assertEquals("Recipes went not as expected", actualFromRecipes1, expectedFromRecipes1);
+            }
+            if (recipe.getTitle().equals("Chocolate Cake")) {
+                actualFromRecipes2 = recipe.toString();
+                assertEquals("Recipes went not as expected", actualFromRecipes2, expectedFromRecipes2);
+            }
         }
+
+
+
 
         for (Post post : posts) {
             actualFromPosts = post.toString();
