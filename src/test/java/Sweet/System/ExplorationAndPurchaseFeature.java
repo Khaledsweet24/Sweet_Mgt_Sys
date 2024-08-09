@@ -11,6 +11,8 @@ import static org.junit.Assert.assertTrue;
 public class ExplorationAndPurchaseFeature {
 
     SweetSystem myApp;
+    String expected="Chocolate Cake" + ": " + "a cake flavored with melted chocolate, cocoa powder" + "\n";
+    String searchForDessert="Chocolate Cake";
     public ExplorationAndPurchaseFeature(SweetSystem myApp) {
         this.myApp = myApp;
     }
@@ -22,36 +24,20 @@ public class ExplorationAndPurchaseFeature {
 
     @Then("I should be able to browse and search for dessert recipes")
     public void iShouldBeAbleToBrowseAndSearchForDessertRecipes() {
-        ArrayList<Recipe> ARecipes = myApp.getRecipes();
-        String expected="Chocolate Cake" + ": " + "a cake flavored with melted chocolate, cocoa powder" + "\n";
-        String actualRecipe="" ;
-        String searchFor="Chocolate Cake";
-        for (Recipe recipe : ARecipes) {
-            if (recipe.getTitle().equals(searchFor)) {
-                actualRecipe = recipe.toString();
-            }
-        }
-        assertEquals("the Recipes search went not as expected",expected,actualRecipe);
+
+        assertEquals("the Recipes search went not as expected",expected,myApp.SearchingList(searchForDessert));
     }
 
     @Then("List of dessert recipes I'm looking for should appear.")
     public void listOfDessertRecipesIMLookingForShouldAppear() {
-        ArrayList<Recipe> ARecipes = myApp.getRecipes();
-        String expected="Chocolate Cake" + ": " + "a cake flavored with melted chocolate, cocoa powder" + "\n";
-        String actualRecipe="" ;
-        String searchFor="Chocolate Cake";
-        for (Recipe recipe : ARecipes) {
-            if (recipe.getTitle().equals(searchFor)) {
-                actualRecipe = recipe.toString();
-            }
-        }
-        System.out.println("\nsearch:Chocolate Cake  f \nResult:"+actualRecipe);
-        assertEquals("the Recipes search went not as expected",expected,actualRecipe);
+        myApp.printSearchingList(searchForDessert);
+        assertEquals("the Recipes search went not as expected",expected,myApp.SearchingList(searchForDessert));
 
     }
 
     @When("I have specific dietary needs or food allergies")
     public void iHaveSpecificDietaryNeedsOrFoodAllergies() {
+
 
     }
 
