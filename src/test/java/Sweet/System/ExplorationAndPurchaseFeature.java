@@ -68,16 +68,14 @@ public class ExplorationAndPurchaseFeature {
 
     @When("I want to buy dessert")
     public void iWantToBuyDessert() {
-
         assertTrue(test.printAllProducts());
-
     }
 
     @Then("I should be able to purchase dessert directly from store owners")
     public void iShouldBeAbleToPurchaseDessertDirectlyFromStoreOwners() {
+
         assertTrue(test.isProductAvailable("Chocolate Cake"));
         assertEquals("the payment process went not as expected",expectedPaymentMessage,test.completePayment(15.23,"Chocolate Cake"));
-
 
     }
 }

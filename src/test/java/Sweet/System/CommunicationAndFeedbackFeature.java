@@ -15,13 +15,8 @@ public class CommunicationAndFeedbackFeature {
 
     }
 
-    @Then("I should be able to directly communicate with store owners and suppliers")
-    public void iShouldBeAbleToDirectlyCommunicateWithStoreOwnersAndSuppliers() {
-
-    }
-
-    @Then("I should be able to send a message describing my problem")
-    public void iShouldBeAbleToSendAMessageDescribingMyProblem() {
+    @Then("I should be able to send a message describing my problem with store owners and suppliers")
+    public void iShouldBeAbleToSendAMessageDescribingMyProblemWithStoreOwnersAndSuppliers() {
 
     }
 

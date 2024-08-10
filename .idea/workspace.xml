@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14161de2-a19d-4840-a966-d2d78935bd9a" name="Changes" comment="work on Exploration And Purchase Feature">
+    <list default="true" id="14161de2-a19d-4840-a966-d2d78935bd9a" name="Changes" comment="Exploration And Purchase Feature done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/Recipe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/StoreOwner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/StoreOwner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/SweetSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/SweetSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cases/CommunicationAndFeedback.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Cases/CommunicationAndFeedback.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Sweet/System/CommunicationAndFeedbackFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sweet/System/CommunicationAndFeedbackFeature.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Sweet/System/ExplorationAndPurchaseFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sweet/System/ExplorationAndPurchaseFeature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Sweet/System/MonitoringAndReportingFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sweet/System/MonitoringAndReportingFeature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Sweet/System/ProductManagementFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sweet/System/ProductManagementFeature.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +155,9 @@
       <workItem from="1723209071078" duration="291000" />
       <workItem from="1723212557207" duration="1149000" />
       <workItem from="1723239603765" duration="8389000" />
-      <workItem from="1723272323377" duration="9731000" />
+      <workItem from="1723272323377" duration="10009000" />
+      <workItem from="1723292555426" duration="1656000" />
+      <workItem from="1723328104478" duration="300000" />
     </task>
     <task id="LOCAL-00001" summary="Creating the Maven project">
       <option name="closed" value="true" />
@@ -288,7 +287,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723196254671</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Exploration And Purchase Feature done">
+      <option name="closed" value="true" />
+      <created>1723283946356</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1723283946356</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,6 +322,7 @@
     <MESSAGE value="Editing the Communication and Feedback feature and Exploration And Purchase Feature (still in progress)" />
     <MESSAGE value="starting in the Exploration And Purchase feature test code and  (still in progress)" />
     <MESSAGE value="work on Exploration And Purchase Feature" />
-    <option name="LAST_COMMIT_MESSAGE" value="work on Exploration And Purchase Feature" />
+    <MESSAGE value="Exploration And Purchase Feature done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Exploration And Purchase Feature done" />
   </component>
 </project>
