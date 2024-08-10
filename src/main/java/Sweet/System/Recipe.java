@@ -2,19 +2,16 @@ package Sweet.System;
 
 public class Recipe {
 
+    private String option;
     private String title;
     private String description;
-    private String Nutrient,Calories,Fat,Sugar,Protein;
+    private String Calories,Fat,Sugar,Protein,FoodAllergies;
 
     public Recipe(String title, String description) {
         this.title = title;
         this.description = description;
     }
-    public Recipe(String title, String description,String Nutrient ) {
-        this.title = title;
-        this.description = description;
-        this.Nutrient = Nutrient;
-    }
+
 
     public String getTitle() {
         return title;
@@ -64,10 +61,26 @@ public class Recipe {
         Protein = protein;
     }
 
-    public String getNutrient() {return Nutrient;}
+    public String getFoodAllergies() {
+        return FoodAllergies;
+    }
 
-    public void setNutrient(String Nutrient) {
-        this.Nutrient = Nutrient;
+    public void setFoodAllergies(String foodAllergies) {
+        FoodAllergies = foodAllergies;
+    }
+
+    public String getNutrient() {
+
+        return "Nutrient: "+"Calories: "+Calories+" Fat: "+Fat+" Sugar: "+Sugar+" Protein: "+Protein;
+    }
+
+
+    public String getOption() {
+        return option;
+    }
+
+    public void setOption(String option) {
+        this.option = option;
     }
 
     @Override

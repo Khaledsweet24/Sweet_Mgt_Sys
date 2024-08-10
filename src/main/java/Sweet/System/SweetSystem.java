@@ -45,14 +45,29 @@ public class SweetSystem {
         storeOwners.add(Khaled);
         RawSupplier Ahmad = new RawSupplier("Supplier1", "RMS1", "supplier1@example.com");
         Suppliers.add(Ahmad);
-        Product product1 = new Product("Chocolate", 10, 5);
+        Product product1 = new Product("Chocolate Cake", 10, 5);
         product1.setDiscount(15.0);
         product1.setSellingTimes(5);
+        product1.setDescription("Chocolate is very tasty!");
         Khaled.products.add(product1);
 
+
         Recipe recipe1 = new Recipe("Kunafa", "dough");
+        recipe1.setOption( "Popular sweets");
+        recipe1.setProtein("51g");
+        recipe1.setFat("221g");
+        recipe1.setSugar("741g");
+        recipe1.setCalories("3105");
+        recipe1.setFoodAllergies("Butter");
         Recipes.add(recipe1);
-        Recipe recipe2 = new Recipe("Chocolate Cake", "a cake flavored with melted chocolate, cocoa powder","calories: 800 Protein: 50g Fat:70g sugars:90g ");
+
+        Recipe recipe2 = new Recipe("Chocolate Cake", "a cake flavored with melted chocolate, cocoa powder");
+        recipe2.setOption( "Cake");
+        recipe2.setProtein("5g");
+        recipe2.setFat("22g");
+        recipe2.setSugar("74g");
+        recipe2.setCalories("305");
+        recipe2.setFoodAllergies("dairy");
         Recipes.add(recipe2);
 
         Post post1 = new Post("Kunafa", "dough");
@@ -398,16 +413,84 @@ public class SweetSystem {
         }
         return actualRecipe;
     }
-    public String SearchingForNutrient(String searchForNutrient){
+    public String SearchingForNutrient(String searchForNutrient1,String dietaryNeeds){
 
-        String actualRecipe="" ;
-        for (Recipe recipe : Recipes) {
-            if (recipe.getTitle().equals(searchForNutrient)) {
-                actualRecipe = recipe.toString();
+        String actualDietaryNeeds="" ;
 
+        if (searchForNutrient1.equals("Protein")) {
+            for (Recipe recipe : Recipes) {
+                if (recipe.getProtein().equals(dietaryNeeds)) {
+                    actualDietaryNeeds = recipe.getTitle()+"\n"+recipe.getNutrient()+"\n";
+
+                }
             }
         }
-        return actualRecipe;
+        if (searchForNutrient1.equals("Fat")){
+                for (Recipe recipe : Recipes) {
+                    if(recipe.getFat().equals(dietaryNeeds)) {
+                        actualDietaryNeeds = recipe.getTitle()+"\n"+recipe.getNutrient()+"\n";
+                    }
+                }
+            }
+        if (searchForNutrient1.equals("Sugar")){
+            for (Recipe recipe : Recipes) {
+                if(recipe.getSugar().equals(dietaryNeeds)) {
+                    actualDietaryNeeds = recipe.getTitle()+"\n"+recipe.getNutrient()+"\n";
+                }
+            }
+        }
+        if (searchForNutrient1.equals("Calories")){
+            for (Recipe recipe : Recipes) {
+                if(recipe.getCalories().equals(dietaryNeeds)) {
+                    actualDietaryNeeds = recipe.getTitle()+"\n"+recipe.getNutrient()+"\n";
+                }
+            }
+        }
+
+
+        System.out.println(actualDietaryNeeds);
+
+        return actualDietaryNeeds;
     }
+
+    public String SearchingForFoodAlergies(String searchForFoodAlergies){
+
+        String actualFoodAlergies="" ;
+            for (Recipe recipe : Recipes) {
+                if (recipe.getFoodAllergies().equals(searchForFoodAlergies)) {
+                    continue;
+                }
+                actualFoodAlergies = actualFoodAlergies +recipe.toString();
+
+            }
+        System.out.println(actualFoodAlergies);
+        return actualFoodAlergies;
+    }
+    public String PrintListOfDietaryNeedsAndFoodAlergies(){
+
+        String actualFoodAlergies="" ;
+        for (Recipe recipe : Recipes) {
+
+            actualFoodAlergies = actualFoodAlergies +recipe.getTitle()+"\nAllergies: "+recipe.getFoodAllergies()+"\n"+recipe.getNutrient()+"\n";
+
+        }
+        System.out.println(actualFoodAlergies);
+        return actualFoodAlergies;
+    }
+
+
+    public String getOptionList(){
+        int counter=1;
+        String actual="Options: ";
+        for (Recipe recipe : Recipes) {
+            actual=  actual +counter+"."+ recipe.getOption()+" ";
+            counter++;
+            }
+        actual= actual + "\n";
+        System.out.println(actual);
+        return actual;
+
+    }
+
 
 }

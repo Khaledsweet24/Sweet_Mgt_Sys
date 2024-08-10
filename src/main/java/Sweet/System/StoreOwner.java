@@ -254,5 +254,19 @@ public class StoreOwner {
         AddressChanged = true;
         return AddressChanged;
     }
+
+        public String completePayment(double payment,String ItemName){
+
+        for(Product p : products)
+        {
+            if(p.getName().equals(ItemName)){
+                System.out.println(p.toString()+"Change: "+(payment-p.getPrice())+"\n");
+            return p.toString()+"Change: "+(payment-p.getPrice())+"\n";
+
+        }
+    }
+        return"Error: item not found";
+    }
+
 }
 

@@ -72,7 +72,7 @@ public class ProductManagementFeature {
 
     @Given("a product with the name {string} exists")
     public void aProductWithTheNameExists(String name) {
-        name = "Chocolate";
+        name = "Chocolate Cake";
         assertTrue(test.isProductAvailable(name));
     }
 
@@ -88,7 +88,7 @@ public class ProductManagementFeature {
 
     @When("I remove the product {string}")
     public void iRemoveTheProduct(String name) {
-        name="Chocolate";
+        name="Chocolate Cake";
         deleted = test.removeProduct(name);
     }
 

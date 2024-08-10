@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14161de2-a19d-4840-a966-d2d78935bd9a" name="Changes" comment="starting in the Exploration And Purchase feature test code and  (still in progress)">
+    <list default="true" id="14161de2-a19d-4840-a966-d2d78935bd9a" name="Changes" comment="work on Exploration And Purchase Feature">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/Recipe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/StoreOwner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/StoreOwner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/SweetSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/SweetSystem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Sweet/System/ExplorationAndPurchaseFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sweet/System/ExplorationAndPurchaseFeature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Sweet/System/MonitoringAndReportingFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sweet/System/MonitoringAndReportingFeature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Sweet/System/ProductManagementFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sweet/System/ProductManagementFeature.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +153,12 @@
       <workItem from="1721764167130" duration="7457000" />
       <workItem from="1721827985516" duration="8745000" />
       <workItem from="1722084557540" duration="8102000" />
-      <workItem from="1723188633901" duration="6777000" />
+      <workItem from="1723188633901" duration="6982000" />
+      <workItem from="1723207384548" duration="1540000" />
+      <workItem from="1723209071078" duration="291000" />
+      <workItem from="1723212557207" duration="1149000" />
+      <workItem from="1723239603765" duration="8389000" />
+      <workItem from="1723272323377" duration="9731000" />
     </task>
     <task id="LOCAL-00001" summary="Creating the Maven project">
       <option name="closed" value="true" />
@@ -272,7 +280,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723121700994</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="work on Exploration And Purchase Feature">
+      <option name="closed" value="true" />
+      <created>1723196254671</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1723196254671</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,6 +314,7 @@
     <MESSAGE value="Adding the Signup Feature to the Sweet System (test + production codes)" />
     <MESSAGE value="Editing the Communication and Feedback feature and Exploration And Purchase Feature (still in progress)" />
     <MESSAGE value="starting in the Exploration And Purchase feature test code and  (still in progress)" />
-    <option name="LAST_COMMIT_MESSAGE" value="starting in the Exploration And Purchase feature test code and  (still in progress)" />
+    <MESSAGE value="work on Exploration And Purchase Feature" />
+    <option name="LAST_COMMIT_MESSAGE" value="work on Exploration And Purchase Feature" />
   </component>
 </project>

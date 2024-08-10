@@ -49,7 +49,7 @@ public class MonitoringAndReportingFeature {
         @Then("I should see the list of best-selling products in each store")
         public void iShouldSeeTheListOfBestSellingProductsInEachStore() {
             String actualMessage= "";
-            String expectedMessage="for Store StoreOwner1 The max selling item is Chocolate";
+            String expectedMessage="for Store StoreOwner1 The max selling item is Chocolate Cake";
             for (StoreOwner st : myApp.storeOwners) {
                 actualMessage = st.getMostSellingItem();
                 assertEquals("Something Went wrong here",expectedMessage,actualMessage);
@@ -58,7 +58,7 @@ public class MonitoringAndReportingFeature {
         @Then("the quantity sold for each product should be displayed")
         public void theQuantitySoldForEachProductShouldBeDisplayed() {
             ArrayList<String> actualMessage;
-            String expectedMessage="Chocolate product has been sold for 5 times";
+            String expectedMessage="Chocolate Cake product has been sold for 5 times";
             for (StoreOwner st : myApp.storeOwners) {
                 actualMessage = st.getQuantitySoldTimes();
                 assertEquals("Something Went wrong here",expectedMessage,actualMessage.get(0));
