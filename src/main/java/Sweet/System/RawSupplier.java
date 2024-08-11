@@ -91,4 +91,9 @@ public class RawSupplier {
         return "Business name: "+ getBusinessName() + "\nUsername: " + getUsername() + "\nPassword: "+getPassword()+"\nEmail: "+getEmail()+"\nCity: "+getAddress()+"\n";
 
     }
+
+    @Override
+    public String toString() {
+        return username;
+    }
 }

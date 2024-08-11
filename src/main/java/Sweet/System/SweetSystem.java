@@ -97,6 +97,12 @@ public class SweetSystem {
         if (username == null || username.trim().isEmpty()) {
             return false; // username is null or empty
         }
+        List<Object> test = getAllUsers();
+        for (Object o : test) {
+            if (o.toString().equals(username)) {
+                return false;
+            }
+        }
         return !Character.isDigit(username.charAt(0));
         //to be contiued
     }
@@ -370,7 +376,7 @@ public class SweetSystem {
 
     public void makeSpecialRequest(User user, StoreOwner owner, String requestContent) {
         specialRequestMade = true;
-        String content = "Special request made by " + user.getUsername(); //+"\n"+requestContent;
+        String content = "Special request made by " + user.getUsername();//+"\n"+requestContent;
         // just add special request parameter to the user to give more info in the email.
         sendEmailNotification(content, owner.getEmail());
     }

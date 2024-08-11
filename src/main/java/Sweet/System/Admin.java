@@ -34,4 +34,10 @@ public class Admin {
     public void setAdminLoggedIn(boolean adminLoggedIn) {
         this.adminLoggedIn = adminLoggedIn;
     }
+
+    @Override
+    public String toString() {
+        return  username;
+    }
 }
+

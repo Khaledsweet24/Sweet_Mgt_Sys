@@ -268,5 +268,9 @@ public class StoreOwner {
         return"Error: item not found";
     }
 
+    @Override
+    public String toString() {
+        return username;
+    }
 }
 
