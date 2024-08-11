@@ -97,14 +97,34 @@ public class SweetSystem {
         if (username == null || username.trim().isEmpty()) {
             return false; // username is null or empty
         }
-        List<Object> test = getAllUsers();
-        for (Object o : test) {
-            if (o.toString().equals(username)) {
-                return false;
+        if (Character.isDigit(username.charAt(0))) {
+            return false; // username starts with a digit
+        }
+
+        List<Object> allUsers = getAllUsers();
+        for (Object user : allUsers) {
+            String existingUsername = getUsernameFromObject(user);
+            if (existingUsername.equals(username)) {
+                return false; // username already exists
             }
         }
-        return !Character.isDigit(username.charAt(0));
-        //to be contiued
+
+        return true; // username is valid
+    }
+
+    // This is a helper method to extract the username from the object
+    private String getUsernameFromObject(Object user) {
+        // Assuming all user objects have a getUsername method
+        if (user instanceof Admin) {
+            return ((Admin) user).getUsername();
+        } else if (user instanceof User) {
+            return ((User) user).getUsername();
+        } else if (user instanceof StoreOwner) {
+            return ((StoreOwner) user).getUsername();
+        } else if (user instanceof RawSupplier) {
+            return ((RawSupplier) user).getUsername();
+        }
+        return "";
     }
 
     public boolean isValidPassword(String password) {
