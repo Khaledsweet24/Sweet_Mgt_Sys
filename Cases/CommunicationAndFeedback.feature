@@ -7,13 +7,10 @@ Feature: Communication and Feedback
     Then I should be able to send a message describing my problem with store owners and suppliers
 
 
-  Scenario: Provide feedback on purchased products
+  Scenario: Provide feedback on purchased products and shared recipes
     Given  I am a user logged in to the Sweet System using username "User1" and password "123"
     When I want to share my experience
-    Then I should be able to provide feedback on the purchased product
+    Then I should be able to provide my feedback
 
-  Scenario: Provide feedback on shared recipe
-    Given I am a user logged in to the Sweet System using username "User1" and password "123"
-    When I want to share my thoughts or suggestions to recipe i followed
-    Then I should be able to leave feedback on the shared recipe
+
 

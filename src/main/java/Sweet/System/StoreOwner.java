@@ -19,7 +19,8 @@ public class StoreOwner {
     private boolean emailChanged;
     private boolean passwordChanged;
     private boolean businessNameChanged;
-    private  boolean AddressChanged;
+    private boolean AddressChanged;
+    private ArrayList<String> messagesList= new ArrayList<>();
 
     public StoreOwner(String businessName, String address) {
         BusinessName = businessName;
@@ -266,6 +267,18 @@ public class StoreOwner {
         }
     }
         return"Error: item not found";
+    }
+
+    public ArrayList<String> getMessagesList() {
+        return messagesList;
+    }
+
+    public void setMessagesList(ArrayList<String> messagesList) {
+        this.messagesList = messagesList;
+    }
+
+    public void addMessage(String message) {
+        messagesList.add(message);
     }
 
     @Override

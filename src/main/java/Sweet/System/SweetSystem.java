@@ -23,6 +23,7 @@ public class SweetSystem {
     public ArrayList<RawSupplier> Suppliers = new ArrayList<RawSupplier>();
     public ArrayList<Post> Posts = new ArrayList<Post>();
     public ArrayList<Recipe> Recipes = new ArrayList<Recipe>();
+    public ArrayList<Feedback> Feedbacks = new ArrayList<Feedback>();
 
     public SweetSystem() {
         registeredIn = false;
@@ -32,19 +33,29 @@ public class SweetSystem {
         productAdded = false;
         messageSent = false;
         User Zahi = new User("User1", "123", "user1@example.com", "Nablus");
+
+        Feedback zahiQudo3 = new Feedback("Chocolate Cake was crazy\n");
+        Feedbacks.add(zahiQudo3);
+
         Feedback feedback = new Feedback("The sweets are awesome, the place was quite and cosy, and the service was perfect, 10/10 Sweet shop!");
         Zahi.setUserFeedback(feedback);
+
         Order order = new Order("Chocolate Cake", 2, "12345");
         Zahi.addOrder(order);
         Users.add(Zahi);
         Admin Hadi = new Admin("Admin", "Admin");
         Admins.add(Hadi);
+
         StoreOwner Khaled = new StoreOwner("StoreOwner1", "SO1", "MedbLucifer@gmail.com");
         Khaled.setAddress("Nablus city, West Bank, Palestine");
         Khaled.setBusinessName("BearBulk Co.");
+        Khaled.addMessage("problem message  store Owner 1\n");
         storeOwners.add(Khaled);
+
         RawSupplier Ahmad = new RawSupplier("Supplier1", "RMS1", "supplier1@example.com");
+        Ahmad.addMessage("problem message Supplier1\n");
         Suppliers.add(Ahmad);
+
         Product product1 = new Product("Chocolate Cake", 10, 5);
         product1.setDiscount(15.0);
         product1.setSellingTimes(5);

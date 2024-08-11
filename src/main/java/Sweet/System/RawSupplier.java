@@ -9,7 +9,7 @@ public class RawSupplier {
     private String BusinessName;
     private String Address;
     private boolean supplierExist;
-    private ArrayList<String> messagesList= new ArrayList<>();;
+    private ArrayList<String> messagesList= new ArrayList<>();
 
     public RawSupplier(String username, String password) {
         this.username = username;
