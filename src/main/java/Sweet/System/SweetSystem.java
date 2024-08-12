@@ -104,6 +104,17 @@ public class SweetSystem {
         UserValid = userValid;
     }
 
+    public boolean isUserRegistered(String username, String password){
+        boolean found = false;
+        for (User user : Users) {
+            if(user.getUsername().equals(username) && user.getPassword().equals(password)){
+                found = true;
+                return found;
+            }
+        }
+        return found;
+    }
+
     public boolean isValidUsername(String username) {
         if (username == null || username.trim().isEmpty()) {
             return false; // username is null or empty
