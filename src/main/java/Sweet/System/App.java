@@ -20,8 +20,7 @@ public class App {
 
         EmailService emailService = new EmailService();
 
-        // Uncomment the following line to test email sending (requires valid credentials)
-        // emailService.sendEmail("recipient@example.com", "Test Subject", "Test Body");
+      emailService.sendEmail("khaledyaishkhy@gmail.com", "Test Subject", "Test Body");
 
         // Create a Feedback instance
         Feedback feedback = new Feedback("Great service!");
