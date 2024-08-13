@@ -41,6 +41,7 @@ public class SweetSystem {
 
         User Zahi = new User("User1", "123", "user1@example.com", "Nablus");
 
+
         Feedback zahiQudo3 = new Feedback("Chocolate Cake was crazy\n");
         Feedbacks.add(zahiQudo3);
 
@@ -644,6 +645,17 @@ public class SweetSystem {
         return actual;
 
     }
+    public boolean regesterUser(String name,String password,String email,String city){
+        if(isValidUsername(name)&&isValidPassword(password)&&isEmailValid(email)) {
+            User renekton = new User(name, password, email, city);
+            return true;
+        }
+        else
+            return false;
+    }
+
+
+
 
 
 }
