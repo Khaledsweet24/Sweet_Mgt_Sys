@@ -1,11 +1,12 @@
 package Sweet.System;
 
-public class Admin {
+public class Admin extends User{
     private String username;
     private String password;
     private boolean adminLoggedIn;
 
     public Admin(String username, String password) {
+        super(username, password,'A');
         this.username = username;
         this.password = password;
         adminLoggedIn = false;

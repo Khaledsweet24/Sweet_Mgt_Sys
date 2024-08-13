@@ -1,8 +1,9 @@
 package Sweet.System;
 
 import java.util.ArrayList;
+import java.util.function.Supplier;
 
-public class RawSupplier {
+public class RawSupplier extends User {
     private String username;
     private String password;
     private String email;
@@ -12,11 +13,13 @@ public class RawSupplier {
     private ArrayList<String> messagesList= new ArrayList<>();
 
     public RawSupplier(String username, String password) {
+        super(username, password,'R');
         this.username = username;
         this.password = password;
     }
 
     public RawSupplier(String username, String password, String email) {
+        super(username, password,'R');
         this.username = username;
         this.password = password;
         this.email = email;

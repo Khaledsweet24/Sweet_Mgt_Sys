@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.SplittableRandom;
 
-public class StoreOwner {
+public class StoreOwner extends User{
     private String username;
     private String password;
     private String email;
@@ -23,11 +23,13 @@ public class StoreOwner {
     private ArrayList<String> messagesList= new ArrayList<>();
 
     public StoreOwner(String businessName, String address) {
+        super(null,null,'S');
         BusinessName = businessName;
         Address = address;
     }
 
     public StoreOwner(String username, String password, String email, String address) {
+        super(username,password,'S');
         this.username = username;
         this.password = password;
         this.email = email;
@@ -35,6 +37,7 @@ public class StoreOwner {
     }
 
     public StoreOwner(String username, String password, String email) {
+        super(username,password,'S');
         this.username = username;
         this.password = password;
         this.email = email;
@@ -144,7 +147,7 @@ public class StoreOwner {
         for(Product p : products)
         {
             p.setDescription("Chocolate is very tasty!");
-            System.out.println(p.toString());
+            System.out.println(p);
             printed = true;
         }
         return printed;

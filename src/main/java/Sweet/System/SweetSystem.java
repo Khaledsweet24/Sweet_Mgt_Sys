@@ -146,13 +146,18 @@ public class SweetSystem {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] storeOwnerData = line.split(" ");
-                if (storeOwnerData.length == 3) {
+                if (storeOwnerData.length == 5) {
                     String username = storeOwnerData[0];
                     String password = storeOwnerData[1];
                     String email = storeOwnerData[2];
+                    String businessName = storeOwnerData[3];
+                    String address = storeOwnerData[4];
 
-                    StoreOwner storeOwner = new StoreOwner(username, password, email);
+                    StoreOwner storeOwner = new StoreOwner(username, password, email,address);
+                    storeOwner.setBusinessName(businessName);
                     storeOwners.add(storeOwner);
+                } else {
+                    System.out.println("Invalid data format in file: " + line);
                 }
             }
         } catch (IOException e) {
@@ -161,6 +166,7 @@ public class SweetSystem {
 
         return storeOwners;
     }
+
     public ArrayList<RawSupplier> loadSuppliersFromFile(String filename) {
         ArrayList<RawSupplier> supplierList = new ArrayList<>();
 
@@ -269,8 +275,38 @@ public class SweetSystem {
         }
     }
 
-    public boolean isUserRegistered(User user) {
+    public boolean isUserRegistered(User user){
         return Users.contains(user);
+    }
+
+    public User isUserRegister(String username, String password) {
+
+        for (User u : Users){
+            if(u.getUsername().equals(username) && u.getPassword().equals(password)){
+                u.setRole('U');
+                return u;
+            }
+        }
+
+        for (Admin admin : Admins){
+            if(admin.getUsername().equals(username) && admin.getPassword().equals(password)){
+                admin.setRole('A');
+                return admin;
+            }
+        }
+        for (StoreOwner s : storeOwners) {
+            if(s.getUsername().equals(username) && s.getPassword().equals(password)){
+                s.setRole('S');
+                return s;
+            }
+        }
+        for (RawSupplier r : Suppliers){
+            if(r.getUsername().equals(username) && r.getPassword().equals(password)){
+                r.setRole('R');
+                return r;
+            }
+        }
+        return null;
     }
 
     public boolean isAddedInSystem(userType type, String username) {

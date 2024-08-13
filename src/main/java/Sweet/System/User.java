@@ -8,6 +8,7 @@ public class User {
     private boolean userLoggedIn;
     private boolean AddressChanged;
     private boolean EmailChanged;
+    private Character Role;
     private String city;
     private String email;
     private String Address;
@@ -20,6 +21,12 @@ public class User {
     public User(String username, String password) {
         this.username = username;
         this.password = password;
+    }
+
+    public User(String username, String password, Character role) {
+        this.username = username;
+        this.password = password;
+        Role = role;
     }
 
     public User(String username, String password, String email, String city) {
@@ -180,5 +187,13 @@ public class User {
     @Override
     public String toString() {
         return username;
+    }
+
+    public Character getRole() {
+        return Role;
+    }
+
+    public void setRole(Character role) {
+        Role = role;
     }
 }
