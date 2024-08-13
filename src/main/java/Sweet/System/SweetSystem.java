@@ -645,7 +645,7 @@ public class SweetSystem {
         return actual;
 
     }
-    public boolean regesterUser(String name,String password,String email,String city){
+    public boolean registerUser(String name,String password,String email,String city){
         if(isValidUsername(name)&&isValidPassword(password)&&isEmailValid(email)) {
             User renekton = new User(name, password, email, city);
             return true;

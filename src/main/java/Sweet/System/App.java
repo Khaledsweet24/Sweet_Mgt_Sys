@@ -7,15 +7,15 @@ public class App {
     static SweetSystem app;
     public static void main(String[] args) {
         try {
-             app = new SweetSystem();
+            app = new SweetSystem();
         }
         catch (Exception e) {
             System.out.println(e.getStackTrace());
         }
         System.out.println("Welcome to Sweet System ");
         for (;;) {
-           if( loginSignUp()){
-           }
+            if( loginSignUp()){
+            }
         }
 
     }
@@ -42,8 +42,8 @@ public class App {
             System.out.println("Please enter your city: ");
             String city = scanner.next();
 
-           boolean regesterValue= app.regesterUser( username, password, email, city);
-           return regesterValue;
+            boolean regesterValue= app.registerUser( username, password, email, city);
+            return regesterValue;
         }
         return false;
     }

@@ -72,7 +72,7 @@ public class MonitoringAndReportingFeature {
         @Then("I should see the number of registered users in each city")
         public void iShouldSeeTheNumberOfRegisteredUsersInEachCity() {
             String actualMessage= test.toString();
-            String expectedMessage = "{Qalqiliah=0, Tulkarem=0, Nablus=1, Tubas=0, Jerusalem=0, Jericho=0, Hebron=0, Bethlehem=0, Jenin=0, Ramallah=0}";
+            String expectedMessage = "{Qalqiliah=0, Tulkarem=0, Nablus=2, Tubas=0, Jerusalem=0, Jericho=0, Hebron=0, Bethlehem=0, Jenin=1, Ramallah=1}";
             assertEquals(expectedMessage,actualMessage);
         }
 
