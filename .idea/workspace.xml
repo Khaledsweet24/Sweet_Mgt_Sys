@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14161de2-a19d-4840-a966-d2d78935bd9a" name="Changes" comment="Debugging Main">
-      <change afterPath="$PROJECT_DIR$/Products.txt" afterDir="false" />
+    <list default="true" id="14161de2-a19d-4840-a966-d2d78935bd9a" name="Changes" comment="Fixing main">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Products.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/StoreOwner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/StoreOwner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/SweetSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/SweetSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Sweet/System/ProductManagementFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sweet/System/ProductManagementFeature.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,8 +156,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Interface.MainFrame" />
         <item itemvalue="JUnit.AcceptanceTest" />
+        <item itemvalue="Application.Interface.MainFrame" />
         <item itemvalue="Application.MainFrame" />
         <item itemvalue="Cucumber Java.Feature: Feature1" />
       </list>
@@ -199,7 +199,7 @@
       <workItem from="1723531093555" duration="152000" />
       <workItem from="1723542836677" duration="31000" />
       <workItem from="1723547016723" duration="1924000" />
-      <workItem from="1723575705062" duration="6268000" />
+      <workItem from="1723575705062" duration="7953000" />
     </task>
     <task id="LOCAL-00001" summary="Creating the Maven project">
       <option name="closed" value="true" />
@@ -393,7 +393,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723581060470</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Fixing main">
+      <option name="closed" value="true" />
+      <created>1723582279618</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1723582279618</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -428,7 +436,8 @@
     <MESSAGE value="Fixing the username validity by checking if it already exists in the system." />
     <MESSAGE value="Test push." />
     <MESSAGE value="Debugging Main" />
-    <option name="LAST_COMMIT_MESSAGE" value="Debugging Main" />
+    <MESSAGE value="Fixing main" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing main" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -110,7 +110,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return name + ", " + description + ", " + price +"\n";
+        return "        "+name + ", " + description + ", " + price;
     }
 }
 

@@ -1,5 +1,6 @@
 package Sweet.System;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -47,6 +48,7 @@ public class App {
                 + "7. remove product\n"
                 + "8. update product\n"
                 ;
+        System.out.println("");
         System.out.println(multiLineString);
         Scanner scanner = new Scanner(System.in);
         int options = scanner.nextInt();
@@ -60,7 +62,7 @@ public class App {
             obj.printAllProducts();
         }
         else if(options == 3){
-            System.out.println(obj.getTotalProfit());
+            System.out.println(obj.calculateTotalProfit());
         }
 
         else if(options == 4){
@@ -70,12 +72,16 @@ public class App {
             System.out.println(obj.getMostSellingItem());
         }
         else if(options == 6){
-            System.out.println("Product Name :");
+            System.out.println("Product Name:");
             String productName = scanner.next();
-            System.out.println("Description :");
+            System.out.println("Description:");
             String description = scanner.next();
-            obj.addProduct(productName,description);
-
+            System.out.println("Price:");
+            double price = scanner.nextDouble();
+            System.out.println("Raw Material Price:");
+            double rawMaterialPrice = scanner.nextDouble();
+            obj.addProduct(productName,description,price,rawMaterialPrice);
+            System.out.println("Product Has Been Added.");
         }
         else if(options == 7){
             System.out.println("Product Name :");
@@ -132,11 +138,10 @@ public class App {
                //admin's menu
            }
            else if (user.getRole() == 'S' || user.getRole() == 's') {
-               System.out.println("Welcome to the Store Management Unit.");
+               System.out.println("------ Welcome to the Store Management Unit ------");
                 while(true) {
                     storeOwenermenu();
                 }
-
            }
            else if (user.getRole() == 'R' || user.getRole() == 'r') {
                System.out.println("Welcome to the Raw Material Management Unit.");

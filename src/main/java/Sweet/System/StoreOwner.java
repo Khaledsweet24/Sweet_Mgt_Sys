@@ -1,8 +1,6 @@
 package Sweet.System;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.SplittableRandom;
@@ -147,7 +145,7 @@ public class StoreOwner extends User{
 
     public boolean printAllProducts(){
         boolean printed = false;
-        System.out.println(products.size());
+        System.out.println("------ Products List ------");
         for(Product p : products)
         {
 
@@ -166,8 +164,9 @@ public class StoreOwner extends User{
         return false;
     }
 
-    public void addProduct(String name, String description){
-        Product newProduct = new Product(name ,description,0.0);
+    public void addProduct(String name, String description,double price, double rmp){
+        Product newProduct = new Product(name ,description,price,rmp);
+        addProductToFile("Products.txt",newProduct);
         products.add(newProduct);
     }
     public boolean updateProduct(String name, String description) {
@@ -313,7 +312,18 @@ public class StoreOwner extends User{
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+    }
+    public void addProductToFile(String fileName, Product product) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileName, true))) {
+            String productData = product.getName() + " " +
+                    product.getDescription() + " " +
+                    product.getPrice() + " " +
+                    product.getRawMaterialCost();
+            bw.write(productData);
+            bw.newLine(); // Move to the next line for the next product
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
 

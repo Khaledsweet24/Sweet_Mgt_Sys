@@ -48,8 +48,8 @@ public class ProductManagementFeature {
     }
 
     @When("I add a new product with the name {string}, description {string}")
-    public void iAddANewProductWithTheNameDescription(String name, String description) {
-        test.addProduct(name, description);
+    public void iAddANewProductWithTheNameDescription(String name, String description,double price, double rmp) {
+        test.addProduct(name, description,price,rmp);
         myApp.setMessage("Action has been made successfully!");
         myApp.setProductAdded(true);
         assertTrue(myApp.isProductAdded());
