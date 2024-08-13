@@ -71,9 +71,9 @@ public class App {
         }
         else if(options == 6){
             System.out.println("Product Name :");
-            String productName = scanner.nextLine();
+            String productName = scanner.next();
             System.out.println("Description :");
-            String description = scanner.nextLine();
+            String description = scanner.next();
             obj.addProduct(productName,description);
 
         }

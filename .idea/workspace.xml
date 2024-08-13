@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14161de2-a19d-4840-a966-d2d78935bd9a" name="Changes" comment="Debugging Main">
+      <change afterPath="$PROJECT_DIR$/Products.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StoreOwners.txt" beforeDir="false" afterPath="$PROJECT_DIR$/StoreOwners.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/RawSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/RawSupplier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/StoreOwner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/StoreOwner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/SweetSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/SweetSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +199,7 @@
       <workItem from="1723531093555" duration="152000" />
       <workItem from="1723542836677" duration="31000" />
       <workItem from="1723547016723" duration="1924000" />
-      <workItem from="1723575705062" duration="5299000" />
+      <workItem from="1723575705062" duration="6268000" />
     </task>
     <task id="LOCAL-00001" summary="Creating the Maven project">
       <option name="closed" value="true" />
@@ -387,7 +385,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723577591867</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Debugging Main">
+      <option name="closed" value="true" />
+      <created>1723581060470</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1723581060470</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

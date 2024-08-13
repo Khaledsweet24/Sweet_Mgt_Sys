@@ -13,6 +13,13 @@ public class Product {
         discountApplied=false;
     }
 
+    public Product(String name, String description, double price, double rawMaterialCost) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.rawMaterialCost = rawMaterialCost;
+    }
+
     public Product(String name, double price, double rawMaterialCost) {
         this.name = name;
         this.price = price;

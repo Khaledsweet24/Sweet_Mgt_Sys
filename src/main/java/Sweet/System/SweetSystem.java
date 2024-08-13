@@ -38,6 +38,7 @@ public class SweetSystem {
         this.Admins = loadAdminsFromFile("Admins.txt");
         this.storeOwners = loadStoreOwnersFromFile("StoreOwners.txt");
         this.Suppliers = loadSuppliersFromFile("Suppliers.txt");
+        StoreOwner.loadProductsFromFile("Products.txt");
 
         User Zahi = new User("User1", "123", "user1@example.com", "Nablus");
 

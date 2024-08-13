@@ -1,5 +1,8 @@
 package Sweet.System;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.SplittableRandom;
@@ -10,7 +13,7 @@ public class StoreOwner extends User{
     private String email;
     private String Address;
     private String BusinessName;
-    public ArrayList<Product>products = new ArrayList<Product>();
+    public static ArrayList<Product>products = new ArrayList<Product>();
     public ArrayList<String>report = new ArrayList<String>();
     private double totalProfit;
     private boolean storeOwnerExist;
@@ -144,9 +147,10 @@ public class StoreOwner extends User{
 
     public boolean printAllProducts(){
         boolean printed = false;
+        System.out.println(products.size());
         for(Product p : products)
         {
-            p.setDescription("Chocolate is very tasty!");
+
             System.out.println(p);
             printed = true;
         }
@@ -163,7 +167,7 @@ public class StoreOwner extends User{
     }
 
     public void addProduct(String name, String description){
-        Product newProduct = new Product(name ,description,0.0  );
+        Product newProduct = new Product(name ,description,0.0);
         products.add(newProduct);
     }
     public boolean updateProduct(String name, String description) {
@@ -287,6 +291,29 @@ public class StoreOwner extends User{
     @Override
     public String toString() {
         return username;
+    }
+
+    public static void loadProductsFromFile(String fileName) {
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] productData = line.split(" ");
+                if (productData.length == 4) {
+                    String name = productData[0];
+                    String description = productData[1];
+                    double price = Double.parseDouble(productData[2]);
+                    double rawMaterialPrice = Double.parseDouble(productData[3]);
+
+                    Product product = new Product(name, description, price, rawMaterialPrice);
+                    products.add(product);
+                } else {
+                    System.out.println("Invalid data format in file: " + line);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
 
