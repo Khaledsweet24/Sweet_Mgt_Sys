@@ -126,7 +126,10 @@ public class App {
                 }
             }
             else if (options == 2) {
-                if(SignUpSetup()) System.out.println("User has been SignedUp successfully.");
+                if(SignUpSetup()) {
+                    System.out.println("User has been SignedUp successfully.");
+
+                }
                 else System.out.println("Username is already in use, or the password is too weak.");
             }
         }
