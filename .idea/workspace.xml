@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14161de2-a19d-4840-a966-d2d78935bd9a" name="Changes" comment="Adding a method to check if the user is registered in the system.">
-      <change afterPath="$PROJECT_DIR$/StoreOwners.txt" afterDir="false" />
+    <list default="true" id="14161de2-a19d-4840-a966-d2d78935bd9a" name="Changes" comment="Test push.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Users.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/SweetSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/SweetSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Sweet/System/MonitoringAndReportingFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sweet/System/MonitoringAndReportingFeature.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +197,7 @@
       <workItem from="1723531093555" duration="152000" />
       <workItem from="1723542836677" duration="31000" />
       <workItem from="1723547016723" duration="1924000" />
-      <workItem from="1723575705062" duration="144000" />
+      <workItem from="1723575705062" duration="1867000" />
     </task>
     <task id="LOCAL-00001" summary="Creating the Maven project">
       <option name="closed" value="true" />
@@ -368,7 +367,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723386759252</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Test push.">
+      <option name="closed" value="true" />
+      <created>1723575886675</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1723575886675</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -401,7 +408,8 @@
     <MESSAGE value="Completing Communication and Notification Feature and enabling Email messaging between the user(in Application) with the Store Owner's email." />
     <MESSAGE value="Finishing the Order Management Feature." />
     <MESSAGE value="Fixing the username validity by checking if it already exists in the system." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing the username validity by checking if it already exists in the system." />
+    <MESSAGE value="Test push." />
+    <option name="LAST_COMMIT_MESSAGE" value="Test push." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

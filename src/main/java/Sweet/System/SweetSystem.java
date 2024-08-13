@@ -646,12 +646,14 @@ public class SweetSystem {
 
     }
     public boolean registerUser(String name,String password,String email,String city){
-        if(isValidUsername(name)&&isValidPassword(password)&&isEmailValid(email)) {
-            User renekton = new User(name, password, email, city);
+        if(isValidUsername(name) && isValidPassword(password) && isEmailValid(email)) {
+            User user = new User(name, password, email, city);
+            addUserToFile("Users.txt",user);
+            Users.add(user); //adding the user to the list to keep it updated.
             return true;
         }
         else
-            return false;
+            return false; //some condition was incorrect while signing up so false will be returned.
     }
 
 

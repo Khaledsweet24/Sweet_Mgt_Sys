@@ -5,6 +5,35 @@ import java.util.Scanner;
 
 public class App {
     static SweetSystem app;
+
+    public static boolean LoginSetup(){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Please enter your Username: ");
+        String username = scanner.next();
+        System.out.println("Please enter your Password: ");
+        String password = scanner.next();
+
+        User user = new User(username, password);
+        return app.isUserRegistered(user);
+
+    }
+    public static boolean SignUpSetup(){
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.println("Please enter your Username: ");
+            String username = scanner.next();
+            System.out.println("Please enter your Password: ");
+            String password = scanner.next();
+            System.out.println("Please enter your Email: ");
+            String email = scanner.next();
+            System.out.println("Please enter your City: ");
+            String city = scanner.next();
+
+            return app.registerUser( username, password, email, city);
+
+    }
+
     public static void main(String[] args) {
         try {
             app = new SweetSystem();
@@ -12,39 +41,27 @@ public class App {
         catch (Exception e) {
             System.out.println(e.getStackTrace());
         }
-        System.out.println("Welcome to Sweet System ");
-        for (;;) {
-            if( loginSignUp()){
+        Scanner scanner = new Scanner(System.in);
+        boolean signedUp = false;
+       while(true) {
+           System.out.println("1.Login\n2.Signup ");
+           int options = scanner.nextInt();
+            if (options == 1) {
+                if (LoginSetup()) {
+                    System.out.println("Welcome to Sweet System ");
+                    break;
+                }
+                else {System.out.println("Invalid username or password, please try again.");
+                    continue;
+                }
+            }
+            else if (options == 2) {
+                if(SignUpSetup()) System.out.println("User has been SignedUp successfully.");
+                else System.out.println("Username is already in use, or the password is too weak.");
             }
         }
 
     }
-    public static boolean loginSignUp(){
-        System.out.println("1.login\n2.signup ");
-        Scanner scanner = new Scanner(System.in);
-        int options = scanner.nextInt();
-        if (options == 1) {
-            System.out.println("Please enter your username: ");
-            String username = scanner.next();
-            System.out.println("Please enter your password: ");
-            String password = scanner.next();
-            return true;
 
-        }
-        if (options == 2) {
 
-            System.out.println("Please enter your username: ");
-            String username = scanner.next();
-            System.out.println("Please enter your password: ");
-            String password = scanner.next();
-            System.out.println("Please enter your email: ");
-            String email = scanner.next();
-            System.out.println("Please enter your city: ");
-            String city = scanner.next();
-
-            boolean regesterValue= app.registerUser( username, password, email, city);
-            return regesterValue;
-        }
-        return false;
-    }
 }
