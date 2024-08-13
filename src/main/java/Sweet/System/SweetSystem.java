@@ -1,5 +1,6 @@
 package Sweet.System;
 
+import java.io.*;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -25,13 +26,19 @@ public class SweetSystem {
     public ArrayList<Recipe> Recipes = new ArrayList<Recipe>();
     public ArrayList<Feedback> Feedbacks = new ArrayList<Feedback>();
 
-    public SweetSystem() {
+    public SweetSystem() throws IOException {
         registeredIn = false;
         UserValid = false;
         recipeAdded = false;
         postAdded = false;
         productAdded = false;
         messageSent = false;
+
+        this.Users = loadUsersFromFile("Users.txt");
+        this.Admins = loadAdminsFromFile("Admins.txt");
+        this.storeOwners = loadStoreOwnersFromFile("StoreOwners.txt");
+        this.Suppliers = loadSuppliersFromFile("Suppliers.txt");
+
         User Zahi = new User("User1", "123", "user1@example.com", "Nablus");
 
         Feedback zahiQudo3 = new Feedback("Chocolate Cake was crazy\n");
@@ -87,6 +94,104 @@ public class SweetSystem {
 
     }
 
+    private ArrayList<User> loadUsersFromFile(String filename) {
+        ArrayList<User> userList = new ArrayList<>();
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] userData = line.split(" ");
+                if (userData.length == 4) {
+                    String username = userData[0];
+                    String password = userData[1];
+                    String email = userData[2];
+                    String city = userData[3];
+
+                    User user = new User(username, password, email, city);
+                    userList.add(user);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return userList;
+    }
+    private ArrayList<Admin> loadAdminsFromFile(String filename) {
+        ArrayList<Admin> adminList = new ArrayList<>();
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] adminData = line.split(" ");
+                if (adminData.length == 2) {
+                    String username = adminData[0];
+                    String password = adminData[1];
+
+                    Admin admin = new Admin(username, password);
+                    adminList.add(admin);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return adminList;
+    }
+    public ArrayList<StoreOwner> loadStoreOwnersFromFile(String fileName) {
+        ArrayList<StoreOwner> storeOwners = new ArrayList<>();
+
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] storeOwnerData = line.split(" ");
+                if (storeOwnerData.length == 3) {
+                    String username = storeOwnerData[0];
+                    String password = storeOwnerData[1];
+                    String email = storeOwnerData[2];
+
+                    StoreOwner storeOwner = new StoreOwner(username, password, email);
+                    storeOwners.add(storeOwner);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return storeOwners;
+    }
+    public ArrayList<RawSupplier> loadSuppliersFromFile(String filename) {
+        ArrayList<RawSupplier> supplierList = new ArrayList<>();
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] supplierData = line.split(" ");
+                if (supplierData.length == 3) {
+                    String username = supplierData[0];
+                    String password = supplierData[1];
+                    String email = supplierData[2];
+
+                    RawSupplier supplier = new RawSupplier(username, password, email);
+                    supplierList.add(supplier);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return supplierList;
+    }
+
+    public void addUserToFile(String filename, User user) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename, true))) {
+            String userLine = String.format("%s %s %s %s", user.getUsername(), user.getPassword(), user.getEmail(), user.getCity());
+            writer.write(userLine);
+            writer.newLine(); // Add a newline after the user data
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public boolean isRegisteredIn() {
         return registeredIn;

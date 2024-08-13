@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14161de2-a19d-4840-a966-d2d78935bd9a" name="Changes" comment="Completing the Exploration And Purchase feature">
+    <list default="true" id="14161de2-a19d-4840-a966-d2d78935bd9a" name="Changes" comment="Adding a method to check if the user is registered in the system.">
+      <change afterPath="$PROJECT_DIR$/Admins.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/StoreOwners.txt.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Suppliers.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/unknown/binary/AbsoluteLayout/SNAPSHOT/AbsoluteLayout-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sweet/System/SweetSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sweet/System/SweetSystem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,10 +45,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="jar://$USER_HOME$/Program Files/Java/jdk-22/lib/src.zip!/java.base/java/util/function/Supplier.java" root0="FORCE_HIGHLIGHTING" />
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
+    <setting file="jar://$PROJECT_DIR$/../../Program Files/Java/jdk-22/lib/src.zip!/java.base/java/util/function/Supplier.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -55,37 +58,64 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.App.executor": "Run",
-    "Cucumber Java.Feature: Feature1.executor": "Run",
-    "JUnit.AcceptanceTest.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "C:/Repository/Sweet Management System/src/main/java/Sweet/System",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.App.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Interface.MainFrame.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainFrame.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: Feature1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AcceptanceTest.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Repository/Sweet Management System/src/main/java/Sweet/System&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Sweet.System" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AcceptanceTest">
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Sweet.System.App" />
       <module name="Sweet.Management.System" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Sweet.System.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Interface.MainFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Interface.MainFrame" />
+      <module name="Sweet.Management.System" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Interface.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Gui.MainFrame" />
+      <module name="Sweet.Management.System" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Gui.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -129,7 +159,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Interface.MainFrame" />
         <item itemvalue="JUnit.AcceptanceTest" />
+        <item itemvalue="Application.MainFrame" />
         <item itemvalue="Cucumber Java.Feature: Feature1" />
       </list>
     </recent_temporary>
@@ -137,7 +169,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-22-openjdk-22-4caba194b151-f504ca98" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
       </set>
     </attachedChunks>
   </component>
@@ -158,6 +191,17 @@
       <workItem from="1722108789698" duration="2844000" />
       <workItem from="1722153509582" duration="866000" />
       <workItem from="1722169491204" duration="3638000" />
+      <workItem from="1722377969744" duration="337000" />
+      <workItem from="1722420343330" duration="8589000" />
+      <workItem from="1722450174302" duration="5831000" />
+      <workItem from="1722521949140" duration="10883000" />
+      <workItem from="1722631557185" duration="12216000" />
+      <workItem from="1723389352147" duration="628000" />
+      <workItem from="1723476676309" duration="1317000" />
+      <workItem from="1723478011860" duration="3112000" />
+      <workItem from="1723531093555" duration="152000" />
+      <workItem from="1723542836677" duration="31000" />
+      <workItem from="1723547016723" duration="1924000" />
     </task>
     <task id="LOCAL-00001" summary="Creating the Maven project">
       <option name="closed" value="true" />
@@ -287,15 +331,47 @@
       <option name="project" value="LOCAL" />
       <updated>1722166494357</updated>
     </task>
-    <task id="LOCAL-00017" summary="Completing the Exploration And Purchase feature">
+    <task id="LOCAL-00017" summary="Completing ContentManagementFeature.">
       <option name="closed" value="true" />
-      <created>1723034876566</created>
+      <created>1722377655304</created>
       <option name="number" value="00017" />
       <option name="presentableId" value="LOCAL-00017" />
       <option name="project" value="LOCAL" />
-      <updated>1723034876566</updated>
+      <updated>1722377655304</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Completing the ProductManagement Feature.">
+      <option name="closed" value="true" />
+      <created>1722430340999</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1722430340999</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Completing Communication and Notification Feature and enabling Email messaging between the user(in Application) with the Store Owner's email.">
+      <option name="closed" value="true" />
+      <created>1722529323704</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1722529323704</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Finishing the Order Management Feature.">
+      <option name="closed" value="true" />
+      <created>1722642206311</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1722642206311</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Fixing the username validity by checking if it already exists in the system.">
+      <option name="closed" value="true" />
+      <created>1723386759252</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1723386759252</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,6 +389,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Creating the Maven project" />
     <MESSAGE value="Adding a README.md file" />
     <MESSAGE value="Adding required dependencies to the pom.xml file" />
@@ -322,7 +399,21 @@
     <MESSAGE value="Adding the UserManagement Feature with some modifications to the flag logic in the code." />
     <MESSAGE value="Finishing up the UserManagement Feature and fixing some logic related to flags and completing the Suppliers test &amp; prod. codes." />
     <MESSAGE value="Completing the MonitoringAndReporting Feature, Still under construction." />
-    <MESSAGE value="Completing the Exploration And Purchase feature" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completing the Exploration And Purchase feature" />
+    <MESSAGE value="Completing ContentManagementFeature." />
+    <MESSAGE value="Completing the ProductManagement Feature." />
+    <MESSAGE value="Completing Communication and Notification Feature and enabling Email messaging between the user(in Application) with the Store Owner's email." />
+    <MESSAGE value="Finishing the Order Management Feature." />
+    <MESSAGE value="Fixing the username validity by checking if it already exists in the system." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing the username validity by checking if it already exists in the system." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.ConcurrentModificationException" package="java.util" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
