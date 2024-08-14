@@ -11,6 +11,7 @@ public class Product {
     public Product() {
         discount=0.0;
         discountApplied=false;
+        sellingTimes=0;
     }
 
     public Product(String name, String description, double price, double rawMaterialCost) {
@@ -18,6 +19,7 @@ public class Product {
         this.description = description;
         this.price = price;
         this.rawMaterialCost = rawMaterialCost;
+        sellingTimes=0;
     }
 
     public Product(String name, double price, double rawMaterialCost) {
@@ -25,6 +27,7 @@ public class Product {
         this.price = price;
         this.rawMaterialCost = rawMaterialCost;
         discount=0.0;
+        sellingTimes=0;
     }
 
     public Product(String name, String description, double price) {
@@ -32,6 +35,7 @@ public class Product {
         this.description = description;
         this.price = price;
         discount=0.0;
+        sellingTimes=0;
     }
 
     public String getName() {

@@ -35,10 +35,8 @@ public class App {
             String city = scanner.next();
 
             return app.registerUser( username, password, email, city);
-
     }
-
-    public static void storeOwenermenu(){
+    public static void storeOwenerMenu(){
         String multiLineString = "1. show account information\n"
                 + "2. get products\n"
                 + "3. total profit\n"
@@ -46,8 +44,8 @@ public class App {
                 + "5. get best selling product\n"
                 + "6. Add product\n"
                 + "7. remove product\n"
-                + "8. update product\n"
-                ;
+                + "8. update product\n";
+
         System.out.println("");
         System.out.println(multiLineString);
         Scanner scanner = new Scanner(System.in);
@@ -69,7 +67,7 @@ public class App {
             System.out.println(obj.getMostSellingItem());
         }
         else if(options == 5){
-            System.out.println(obj.getMostSellingItem());
+            System.out.println(obj.getBestSellingProduct());
         }
         else if(options == 6){
             System.out.println("Product Name:");
@@ -85,22 +83,96 @@ public class App {
         }
         else if(options == 7){
             System.out.println("Product Name :");
-            String productName = scanner.nextLine();
-            obj.removeProduct(productName);
+            String productName = scanner.next();
+            obj.deleteProductFromFile("Products.txt",productName);
 
         }
         else if(options == 8){
             System.out.println("Product Name(You want to update) :");
-            String productName = scanner.nextLine();
+            String productName = scanner.next();
             System.out.println("Description :");
-            String description = scanner.nextLine();
-            obj.updateProduct(productName,description);
+            String description = scanner.next();
+            System.out.println("Price:");
+            double price = scanner.nextDouble();
+            System.out.println("Raw Material Price:");
+            double rawMaterialPrice = scanner.nextDouble();
+            Product newProduct = new Product(productName,description,price,rawMaterialPrice);
+            obj.updateProductInFile("Products.txt",productName,newProduct);
         }
 
         else {
             return;
             }
         }
+    public static void UserMainMenu(){
+        String multiLineString = "1. Show account information\n"
+                + "2. Get orders\n"
+                + "3. Get order by id\n"
+                + "4. Add order\n"
+                + "5. Cancel order\n"
+                + "6. Desert creation\n"
+                + "7. Get last desert creation\n"
+                ;
+        System.out.println(multiLineString);
+        Scanner scanner = new Scanner(System.in);
+        int options = scanner.nextInt();
+
+        User obj = app.getUserByUsername(user.getUsername());
+
+        if(options == 1){
+            System.out.println(obj.viewAccountDetails());
+        }
+        else if(options == 2){
+            for(Order o : obj.getOrderList()){
+                System.out.println(o);
+            }
+        }
+        else if(options == 3){
+            System.out.println("The order id :");
+            int id = scanner.nextInt();
+            System.out.println(obj.getOrder(id));
+        }
+        else if(options == 4){
+
+            System.out.print("Enter Product Name: ");
+            String ProductName = scanner.nextLine();
+
+            // Input for orderID
+            System.out.print("Enter Order ID: ");
+            String orderID = scanner.nextLine();
+
+            // Input for Quantity
+            System.out.print("Enter Quantity: ");
+            int Quantity = scanner.nextInt();
+            Order o = new Order(ProductName,Quantity,orderID);
+            obj.addOrder(o);
+
+        }
+        else if(options == 5){
+            System.out.print("Enter Order ID: ");
+            String orderID = scanner.nextLine();
+
+            obj.cancelOrder(orderID);
+        }
+        else if(options == 6){
+            System.out.print("Enter Title: ");
+            String title = scanner.nextLine();
+
+            // Input for description
+            System.out.print("Enter Description: ");
+            String description = scanner.nextLine();
+
+            DessertCreation desert = new DessertCreation(title,description);
+            obj.postDessertCreation(desert);
+
+            System.out.println("done desert creation");
+        }
+
+        else if(options == 7){
+            System.out.println(obj.getLatestDessertCreation());
+        }
+
+    }
 
     public static void main(String[] args) {
         try {
@@ -143,7 +215,7 @@ public class App {
            else if (user.getRole() == 'S' || user.getRole() == 's') {
                System.out.println("------ Welcome to the Store Management Unit ------");
                 while(true) {
-                    storeOwenermenu();
+                    storeOwenerMenu();
                 }
            }
            else if (user.getRole() == 'R' || user.getRole() == 'r') {
@@ -153,8 +225,9 @@ public class App {
            }
            else if (user.getRole() == 'U' || user.getRole() == 'u'){
                System.out.println("Welcome to the Sweet System Application.");
-               scanner.next();
-               //user menue
+               while(true){
+                   UserMainMenu();
+               }
            }
            else {
                System.out.println("Something Wend Wrong when attempting to login.");

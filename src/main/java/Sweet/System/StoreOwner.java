@@ -1,6 +1,7 @@
 package Sweet.System;
 
 import java.io.*;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.SplittableRandom;
@@ -183,7 +184,6 @@ public class StoreOwner extends User{
     public boolean removeProduct(String name) {
         boolean deleted = false;
         Iterator<Product> iterator = products.iterator();
-
         while (iterator.hasNext()) {
             Product p = iterator.next();
             if (p.getName().equals(name)) {
@@ -325,5 +325,65 @@ public class StoreOwner extends User{
             e.printStackTrace();
         }
     }
+    private void writeProductsToFile(String fileName, ArrayList<Product> products) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileName))) {
+            for (Product product : products) {
+                String productData = product.getName() + " " +
+                        product.getDescription() + " " +
+                        product.getPrice() + " " +
+                        product.getRawMaterialCost();
+                bw.write(productData);
+                bw.newLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void updateProductInFile(String fileName, String productName, Product updatedProduct) {
+        boolean found = false;
+        for (int i = 0; i < products.size(); i++) {
+            Product product = products.get(i);
+            if (product.getName().equals(productName)) {
+                products.set(i, updatedProduct); // Replace with the updated product
+                found = true;
+                break;
+            }
+        }
+
+        if (found) {
+            writeProductsToFile(fileName, products);
+            System.out.println("Product updated successfully.");
+        } else {
+            System.out.println("Product not found.");
+        }
+    }
+
+    public boolean deleteProductFromFile(String fileName, String productName) {
+        boolean found = false;
+
+        Iterator<Product> iterator = products.iterator();
+        while (iterator.hasNext()) {
+            Product product = iterator.next();
+            if (product.getName().equals(productName)) {
+                iterator.remove(); // Remove the product from the list
+                found = true;
+                break;
+            }
+        }
+
+        if (found) {
+            writeProductsToFile(fileName, products); // Update the file with the modified list
+            System.out.println("Product removed.");
+        }
+        else {
+            System.out.println("Product not found.");
+        }
+
+        return found;
+    }
+
+
+
 }
 
